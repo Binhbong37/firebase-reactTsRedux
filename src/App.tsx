@@ -1,5 +1,6 @@
 import './App.css';
 import ListUser from './components/ListUser';
+import MuatationRef from './components/useRef/MuatationRef';
 
 function App() {
 
@@ -18,6 +19,7 @@ function App() {
       <ul>
         <ListUser listUser={listUser} />
       </ul>
+      <MuatationRef />
     </div>
   );
 }
