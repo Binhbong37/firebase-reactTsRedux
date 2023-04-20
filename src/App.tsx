@@ -1,24 +1,23 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import ListUser from './components/ListUser';
 
 function App() {
+
+  const listUser = [
+    { id: 1, lName: 'Binh', age: 27 },
+    { id: 2, lName: 'Binh1', age: 26 },
+    { id: 3, lName: 'Binh2', age: 25 },
+    { id: 4, lName: 'Binh3', age: 24 },
+    { id: 5, lName: 'Binh4', age: 23 },
+    { id: 6, lName: 'Binh5', age: 22 },
+  ]
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>List User</h1>
+      <ul>
+        <ListUser listUser={listUser} />
+      </ul>
     </div>
   );
 }
