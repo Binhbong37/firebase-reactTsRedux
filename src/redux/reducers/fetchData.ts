@@ -14,7 +14,7 @@ const intialState: FetchData = {
 } 
 
 
-const repotoriReducer = (state= intialState, action:Action): FetchData => {
+const fetchDataReducer = (state= intialState, action:Action): FetchData => {
   switch(action.type) {
     case ActionType.FETCH_DATA:
       return {loading:true, err: null, data: []}
@@ -29,4 +29,4 @@ const repotoriReducer = (state= intialState, action:Action): FetchData => {
 }
 
 
-export default repotoriReducer
+export default fetchDataReducer

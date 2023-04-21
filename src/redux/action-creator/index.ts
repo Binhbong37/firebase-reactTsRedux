@@ -5,7 +5,7 @@ import { Action } from "../actions";
 import { ActionType } from "../action-types";
 
 // Redux thunk
-export const fetchRepo = () => async (dispatch: Dispatch<Action>) => {
+export const fetchData = () => async (dispatch: Dispatch<Action>) => {
   // viet dispatch nhu vay se tranh dc TH ma dispatch nham du lieu len 
   // Dispatch cai loading truoc
   dispatch({
@@ -15,10 +15,10 @@ export const fetchRepo = () => async (dispatch: Dispatch<Action>) => {
   try {
     const response = await axios("https://jsonplaceholder.typicode.com/posts");
 
-    console.log(response)
     dispatch({
       type: ActionType.FETCH_DATA_SUCCESS,
-      payload: ['abc', 'd']})
+      payload: response.data
+    })
   } catch (error) {
     dispatch({
       type: ActionType.FETCH_DATA_ERR,

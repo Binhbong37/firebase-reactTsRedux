@@ -1,18 +1,18 @@
 import { ActionType } from "../action-types";
 
-interface SearchRepoAction {
+interface FetchDataAction {
   type: ActionType.FETCH_DATA
 }
 
-interface SearchRepoSuccessAction {
+interface FetchDataSucessAction {
   type: ActionType.FETCH_DATA_SUCCESS,
   payload: string[]
 }
 
-interface SearchRepoErrAction {
+interface FetchDataErrAction {
   type: ActionType.FETCH_DATA_ERR,
   payload: string
 }
 
 
-export type Action = SearchRepoAction | SearchRepoErrAction | SearchRepoSuccessAction 
+export type Action = FetchDataAction | FetchDataSucessAction | FetchDataErrAction 

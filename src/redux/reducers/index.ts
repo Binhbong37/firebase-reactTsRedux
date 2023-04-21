@@ -1,8 +1,8 @@
-import repotoriReducer from "./fetchData";
+import fetchDataReducer from './fetchData';
 import {combineReducers} from 'redux';
 
 const reducers = combineReducers({
-  repo: repotoriReducer
+  fetchData: fetchDataReducer
 })
 
 export default reducers
