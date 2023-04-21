@@ -5,6 +5,8 @@ import { useAction } from './helpers/useAction';
 import { useTypeSelector } from './helpers/useTypeSelector';
 
 function App() {
+  const api = (process.env.REACT_APP_SOME_CONFIGURATION);
+  console.log(api)
   // interface PostItem {
   //   id: number,
   //   title: string,
@@ -12,9 +14,9 @@ function App() {
 
   const { fetchData } = useAction()
   const { data, err, loading } = useTypeSelector(state => state.fetchData);
-  console.log(data, err)
 
   useEffect(() => {
+
     fetchData()
     // react-hooks/exhaustive-deps
   }, [])
