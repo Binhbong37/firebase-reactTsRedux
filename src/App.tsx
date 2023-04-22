@@ -1,38 +1,33 @@
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 import MuatationRef from './components/useRef/MuatationRef';
-import { useAction } from './helpers/useAction';
-import { useTypeSelector } from './helpers/useTypeSelector';
 
+import { userCollecion } from './firebase/controller';
+import { DocumentData, QuerySnapshot, onSnapshot } from 'firebase/firestore';
+import { NewUsersType } from './type/users.type';
 function App() {
-  const api = (process.env.REACT_APP_SOME_CONFIGURATION);
-  console.log(api)
-  // interface PostItem {
-  //   id: number,
-  //   title: string,
-  // }
-
-  const { fetchData } = useAction()
-  const { data, err, loading } = useTypeSelector(state => state.fetchData);
+  const [users, setUsers] = useState<NewUsersType[]>([])
 
   useEffect(() => {
-
-    fetchData()
-    // react-hooks/exhaustive-deps
+    onSnapshot(userCollecion, (snapshot: QuerySnapshot<DocumentData>) => {
+      const fetchUser = snapshot.docs.map(doc => {
+        return {
+          id: doc.id,
+          ...doc.data()
+        }
+      })
+      setUsers(fetchUser)
+    })
   }, [])
 
-
+  console.log(users)
   return (
     <div className="App">
       <h1>List User</h1>
-      {loading && <h3>Loading ....</h3>}
       <ul>
-        {data && data.length > 0 && data.map((item, id) => {
-          return (
-            <li key={id}>{JSON.stringify(item)}</li>
-          )
+        {users && users.length > 0 && users.map((user) => {
+          return <li key={user.id}>{user.lName}</li>
         })}
-
       </ul>
 
       <MuatationRef />

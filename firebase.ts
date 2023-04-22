@@ -1,1 +1,0 @@
-const secret = process.env.API_KEY
