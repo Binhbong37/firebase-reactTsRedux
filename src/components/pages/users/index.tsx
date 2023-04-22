@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { userCollecion } from '../../../firebase/controller';
 import { DocumentData, QuerySnapshot, onSnapshot } from 'firebase/firestore';

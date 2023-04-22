@@ -1,8 +1,10 @@
-import axios from 'axios'
-import {Dispatch} from 'redux'
-
+// import axios from 'axios'
+import {Dispatch} from 'redux';
+import { DocumentData, QuerySnapshot, onSnapshot } from 'firebase/firestore';
 import { Action } from "../actions";
 import { ActionType } from "../action-types";
+
+import { userCollecion } from '../../firebase/controller';
 
 // Redux thunk
 export const fetchData = () => async (dispatch: Dispatch<Action>) => {
@@ -13,11 +15,20 @@ export const fetchData = () => async (dispatch: Dispatch<Action>) => {
   })
 
   try {
-    const response = await axios("https://jsonplaceholder.typicode.com/posts");
-
+    let users; 
+    // const response = await axios("https://jsonplaceholder.typicode.com/posts");
+     onSnapshot(userCollecion, async (snapshot: QuerySnapshot<DocumentData>) => {
+      users = await snapshot.docs.map(doc => {
+        return {
+          id: doc.id,
+          ...doc.data()
+        }
+      })
+    })
+    console.log("fetchUser: ", users)
     dispatch({
       type: ActionType.FETCH_DATA_SUCCESS,
-      payload: response.data
+      payload: []
     })
   } catch (error) {
     dispatch({

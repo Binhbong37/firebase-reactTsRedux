@@ -1,12 +1,18 @@
+import { useEffect } from 'react'
 import './App.css'
 
 import User from "./components/pages/users";
-function App() {
+import { useAction } from './helpers/useAction';
 
+function App() {
+  const { fetchData } = useAction()
+
+  useEffect(() => {
+    fetchData()
+  }, [])
   return (
     <div className="App">
       <User />
-
     </div>
   );
 }
