@@ -6,7 +6,7 @@ interface FetchDataAction {
 
 interface FetchDataSucessAction {
   type: ActionType.FETCH_DATA_SUCCESS,
-  payload: string[]
+  payload: any
 }
 
 interface FetchDataErrAction {

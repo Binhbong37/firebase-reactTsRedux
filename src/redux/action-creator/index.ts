@@ -15,21 +15,21 @@ export const fetchData = () => async (dispatch: Dispatch<Action>) => {
   })
 
   try {
-    let users; 
     // const response = await axios("https://jsonplaceholder.typicode.com/posts");
      onSnapshot(userCollecion, async (snapshot: QuerySnapshot<DocumentData>) => {
-      users = await snapshot.docs.map(doc => {
+     const listUser =  snapshot.docs.map(doc => {
         return {
           id: doc.id,
           ...doc.data()
         }
       })
+      dispatch({
+        type: ActionType.FETCH_DATA_SUCCESS,
+        payload: listUser
+      })
     })
-    console.log("fetchUser: ", users)
-    dispatch({
-      type: ActionType.FETCH_DATA_SUCCESS,
-      payload: []
-    })
+    
+    
   } catch (error) {
     dispatch({
       type: ActionType.FETCH_DATA_ERR,

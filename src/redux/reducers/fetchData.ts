@@ -4,7 +4,7 @@ import { Action } from "../actions"
 interface FetchData {
   loading: boolean,
   err: null | string,
-  data: string[]
+  data: any
 }
 
 const intialState: FetchData = {
