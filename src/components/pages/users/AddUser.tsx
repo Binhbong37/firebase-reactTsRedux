@@ -2,18 +2,32 @@ import { Form, Button, Input, Select, DatePicker } from 'antd'
 import './addUser.css';
 import { useEffect, useState } from 'react';
 import { useAction } from '../../../helpers/useAction';
+import { useNavigate, Link } from 'react-router-dom'
 
 const AddUser = () => {
-  const [newUser, setNewUser] = useState({});
-  const { addNewUser } = useAction()
+  const [newUser, setNewUser] = useState<any>({});
+  const { addNewUser } = useAction();
+  const navigate = useNavigate()
+
+  const tranferData = async () => {
+    if (Object.keys(newUser).length === 0 || newUser.outOfDate === false) {
+      return;
+    }
+
+    addNewUser(newUser)
+    navigate('/')
+
+  }
 
   useEffect(() => {
-    addNewUser(newUser);
+    tranferData()
+
   }, [newUser])
 
   return (
     <div className='addContainer'>
       <h2 style={{ textAlign: 'center' }}>Add User</h2>
+
       <Form
         autoComplete='off'
         labelCol={{ span: 7 }} wrapperCol={{ span: 10 }}
@@ -80,6 +94,7 @@ const AddUser = () => {
           <Button block type='primary' htmlType='submit'>Add</Button>
         </Form.Item>
       </Form>
+      <Link to="/" >Back to list</Link>
     </div>
   )
 }

@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
 import { Button, Table } from 'antd';
-import { EditOutlined, DeleteOutlined } from "@ant-design/icons";
+import { EditOutlined, DeleteOutlined, PlusCircleOutlined } from "@ant-design/icons";
 import { Link } from 'react-router-dom'
-
+import './addUser.css'
 
 import { useTypeSelector } from '../../../helpers/useTypeSelector';
 import { useAction } from '../../../helpers/useAction';
@@ -56,17 +56,19 @@ const User = () => {
   const { data } = useTypeSelector(state => state.fetchData);
   // console.log(err)
   // console.log(loading)
-
   useEffect(() => {
     fetchData()
   }, [])
 
   return (
-    <div>
-      <Button>
-        <Link to={'/addUser'}>Add User</Link>
+    <div className='view-list'>
+
+      <h2>List User</h2>
+      <Button style={{ marginBottom: '10px' }}>
+        <Link to={'/addUser'}>
+          <PlusCircleOutlined /> {" "}
+          Add User</Link>
       </Button>
-      <h1>List User</h1>
       <Table rowKey="id" columns={columns} dataSource={data}
         scroll={{ y: 500 }}
       />

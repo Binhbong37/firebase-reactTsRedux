@@ -1,6 +1,6 @@
 // import axios from 'axios'
 import {Dispatch} from 'redux';
-import { DocumentData, QuerySnapshot, onSnapshot } from 'firebase/firestore';
+import { DocumentData, QuerySnapshot, onSnapshot, addDoc } from 'firebase/firestore';
 import { Action } from "../actions";
 import { ActionType } from "../action-types";
 
@@ -39,6 +39,11 @@ export const fetchData = () => async (dispatch: Dispatch<Action>) => {
 }
 
 export const addNewUser = (newUser: any) => async(dispatch:Dispatch) => {
-
-  console.log(newUser)
+  const newAge =new Date().getFullYear() - newUser.dob.$y 
+   await addDoc(userCollecion, {
+    lName: newUser.lName,
+    email: newUser.email,
+    age: newAge   
+  })
+ 
 } 
