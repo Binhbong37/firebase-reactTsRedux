@@ -22,6 +22,7 @@ const AddUser = () => {
   useEffect(() => {
     tranferData()
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [newUser])
 
   return (

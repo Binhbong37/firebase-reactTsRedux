@@ -58,9 +58,7 @@ export const deleteUser = (id: any) => async(dispatch: Dispatch<Action>) => {
     payload: id
   })
   
-  
 }
-
 
 export const editUser = (user:any) => async(dispatch: Dispatch<Action>) => {
  
