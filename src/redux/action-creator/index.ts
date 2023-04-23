@@ -1,10 +1,12 @@
 // import axios from 'axios'
 import {Dispatch} from 'redux';
-import { DocumentData, QuerySnapshot, onSnapshot, addDoc } from 'firebase/firestore';
+import { DocumentData, QuerySnapshot, onSnapshot, addDoc,
+  deleteDoc, doc
+ } from 'firebase/firestore';
 import { Action } from "../actions";
 import { ActionType } from "../action-types";
 
-import { userCollecion } from '../../firebase/controller';
+import { userCollecion, fireStore } from '../../firebase/controller';
 
 // Redux thunk
 export const fetchData = () => async (dispatch: Dispatch<Action>) => {
@@ -47,3 +49,9 @@ export const addNewUser = (newUser: any) => async(dispatch:Dispatch) => {
   })
  
 } 
+
+
+export const deleteUser = (id: any) => async(dispatch: Dispatch) => {
+  const document = doc(fireStore, `users/${id}`);
+  await deleteDoc(document);
+}

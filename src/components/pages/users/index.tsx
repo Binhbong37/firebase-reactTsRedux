@@ -7,6 +7,7 @@ import './addUser.css'
 import { useTypeSelector } from '../../../helpers/useTypeSelector';
 import { useAction } from '../../../helpers/useAction';
 const User = () => {
+
   const columns = [
     { key: 'id', title: "ID", dataIndex: 'id' },
     { key: 'lName', title: "Name", dataIndex: 'lName' },
@@ -14,11 +15,13 @@ const User = () => {
     {
       key: 'Action',
       title: "Action",
-      render: () => {
+      render: (record: any) => {
         return (
           <>
             <EditOutlined />
-            <DeleteOutlined style={{ color: 'red', marginLeft: "10px" }} />
+            <DeleteOutlined style={{ color: 'red', marginLeft: "10px" }}
+              onClick={() => handleDelete(record)}
+            />
           </>
         )
       }
@@ -52,13 +55,18 @@ const User = () => {
   //   })
   // }, [])
 
-  const { fetchData } = useAction();
+  const { fetchData, deleteUser } = useAction();
   const { data } = useTypeSelector(state => state.fetchData);
   // console.log(err)
   // console.log(loading)
   useEffect(() => {
     fetchData()
   }, [])
+
+  const handleDelete = (user: any) => {
+    deleteUser(user.id)
+
+  }
 
   return (
     <div className='view-list'>
