@@ -31,7 +31,7 @@ export const fetchData = () => async (dispatch: Dispatch<Action>) => {
 }
 
 
-export const addNewUser = (newUser: any) => async(dispatch:Dispatch) => {
+export const addNewUser = (newUser: any) => async(dispatch:Dispatch<Action>) => {
   const newAge =new Date().getFullYear() - newUser.dob.$y 
   const newUserAdd = {
     lName: newUser.lName,
@@ -39,7 +39,14 @@ export const addNewUser = (newUser: any) => async(dispatch:Dispatch) => {
     age: newAge   
   }
 
-  await axios.post("https://api-firebase-redux-default-rtdb.firebaseio.com/users.json", newUserAdd);
+  const response = await axios.post("https://api-firebase-redux-default-rtdb.firebaseio.com/users.json", newUserAdd);
+  
+  console.log( response.data)
+  
+  dispatch({
+    type: ActionType.ADD_NEW_USER,
+    payload: response
+  })
 } 
 
 
@@ -55,12 +62,13 @@ export const deleteUser = (id: any) => async(dispatch: Dispatch<Action>) => {
 }
 
 
-export const editUser = (user:any) => async(dispatch: Dispatch) => {
-  console.log(user)
-  const eidt = await axios.patch(`https://api-firebase-redux-default-rtdb.firebaseio.com/users/${user.id}.json`, {
-  user
-  });
-
-  console.log(eidt)
+export const editUser = (user:any) => async(dispatch: Dispatch<Action>) => {
+ 
+  const respone = await axios.patch(`https://api-firebase-redux-default-rtdb.firebaseio.com/users/${user.id}.json`,user
+  );
+  dispatch({
+    type: ActionType.EDIT_USER,
+    payload: respone.data
+  })
 }
 

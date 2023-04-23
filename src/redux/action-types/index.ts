@@ -7,5 +7,7 @@ export enum ActionType {
   ADD_NEW_USER_SUCCESS = 'addnewusersuccess',
   ADD_NEW_USER_ERR = 'addnewusererr',
 
-  DELET_USER = 'deleteUser'
+  DELET_USER = 'deleteUser',
+
+  EDIT_USER = 'edituser'
 }

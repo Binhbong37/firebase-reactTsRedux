@@ -65,6 +65,7 @@ const User = () => {
   // console.log(loading)
   useEffect(() => {
     fetchData()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   const handleDelete = (user: any) => {

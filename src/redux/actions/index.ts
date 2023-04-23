@@ -19,5 +19,19 @@ interface DeleteUser {
   payload: string
 }
 
+interface AddUser {
+  type: ActionType.ADD_NEW_USER,
+  payload: any
+}
 
-export type Action = FetchDataAction | FetchDataSucessAction | FetchDataErrAction | DeleteUser
+interface EditUser {
+  type: ActionType.EDIT_USER,
+  payload: any
+}
+
+export type Action = FetchDataAction
+ | FetchDataSucessAction 
+ | FetchDataErrAction 
+ | DeleteUser
+ | AddUser
+ | EditUser

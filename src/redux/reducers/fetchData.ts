@@ -23,6 +23,18 @@ const fetchDataReducer = (state= intialState, action:Action): FetchData => {
     case ActionType.FETCH_DATA_SUCCESS:
       return {loading:false, err: null, data: action.payload}
     
+    case ActionType.EDIT_USER:
+      const index = state.data.findIndex((user: any) => {
+        return user.id === action.payload.id
+      })
+      state.data.splice(index, 1, action.payload)
+      const newDataChange = [...state.data]
+      
+    return {
+      ...state,
+      data: newDataChange
+    }
+
     case ActionType.DELET_USER:
       const newData = state.data.filter((user:any) => {
         return user.id !== action.payload
