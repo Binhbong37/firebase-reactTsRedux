@@ -37,3 +37,8 @@ export const fetchData = () => async (dispatch: Dispatch<Action>) => {
     })
   }
 }
+
+export const addNewUser = (newUser: any) => async(dispatch:Dispatch) => {
+
+  console.log(newUser)
+} 

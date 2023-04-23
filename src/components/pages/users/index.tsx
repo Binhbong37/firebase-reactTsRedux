@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { Button, Table } from 'antd';
-import { EditOutlined, DeleteOutlined } from "@ant-design/icons"
+import { EditOutlined, DeleteOutlined } from "@ant-design/icons";
+import { Link } from 'react-router-dom'
 
 
 import { useTypeSelector } from '../../../helpers/useTypeSelector';
@@ -62,7 +63,9 @@ const User = () => {
 
   return (
     <div>
-      <Button>Add User</Button>
+      <Button>
+        <Link to={'/addUser'}>Add User</Link>
+      </Button>
       <h1>List User</h1>
       <Table rowKey="id" columns={columns} dataSource={data}
         scroll={{ y: 500 }}
