@@ -22,6 +22,16 @@ const fetchDataReducer = (state= intialState, action:Action): FetchData => {
       return {loading:false, err: action.payload, data: []}
     case ActionType.FETCH_DATA_SUCCESS:
       return {loading:false, err: null, data: action.payload}
+    
+    case ActionType.DELET_USER:
+      const newData = state.data.filter((user:any) => {
+        return user.id !== action.payload
+      })
+
+      return {
+        ...state,
+        data: newData
+      }
 
     default:
       return state

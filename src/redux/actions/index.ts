@@ -14,5 +14,10 @@ interface FetchDataErrAction {
   payload: string
 }
 
+interface DeleteUser {
+  type: ActionType.DELET_USER,
+  payload: string
+}
 
-export type Action = FetchDataAction | FetchDataSucessAction | FetchDataErrAction 
+
+export type Action = FetchDataAction | FetchDataSucessAction | FetchDataErrAction | DeleteUser

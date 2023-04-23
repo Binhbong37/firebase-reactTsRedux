@@ -8,11 +8,13 @@ import { useTypeSelector } from '../../../helpers/useTypeSelector';
 import { useAction } from '../../../helpers/useAction';
 const User = () => {
   const [isEdit, setEditing] = useState(false);
-  const [userEdit, setUserEdit] = useState<any>({})
+  const [userEdit, setUserEdit] = useState<any>({});
+  const [err, setErr] = useState('')
 
   const columns = [
     { key: 'id', title: "ID", dataIndex: 'id' },
     { key: 'lName', title: "Name", dataIndex: 'lName' },
+    { key: "age", title: "Age", dataIndex: "age" },
     { key: 'email', title: "Email", dataIndex: 'email' },
     {
       key: 'Action',
@@ -72,15 +74,21 @@ const User = () => {
       okType: 'danger',
       onOk: () => {
         deleteUser(user.id)
-
       }
     })
+
 
   }
 
   const handleEdit = (user: any) => {
     setEditing(true)
     setUserEdit(user)
+  }
+
+  const resetEdit = (): void => {
+    setEditing(false)
+    setErr('');
+    setUserEdit(false)
   }
 
 
@@ -101,24 +109,32 @@ const User = () => {
         open={isEdit}
         okText="Save"
         onCancel={() => {
-          setEditing(false)
+          resetEdit()
         }}
         onOk={() => {
+          if (userEdit.lName === '' || userEdit.email === "") {
+            setErr('Fill is required')
+            return;
+          }
           editUser(userEdit)
 
-          setEditing(false)
+          resetEdit()
         }}
 
       >
         <Input value={userEdit?.lName} onChange={(e: any) => setUserEdit((prev: any) => {
           return { ...prev, lName: e.target.value }
-        })} />
+        })}
+
+          style={{ marginBottom: '10px' }} />
+        <span style={{ color: "red" }}>{err ? err : ''}</span>
         <Input value={userEdit?.email}
           onChange={(e: any) => {
             setUserEdit((prev: any) => {
               return { ...prev, email: e.target.value }
             })
           }}
+
         />
 
       </Modal>

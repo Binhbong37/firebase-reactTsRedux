@@ -44,7 +44,8 @@ const AddUser = () => {
             message: "Provide your name"
           },
           { whitespace: true },
-          { min: 2 }
+          { min: 2 },
+          { max: 10 }
           ]}
 
           hasFeedback
