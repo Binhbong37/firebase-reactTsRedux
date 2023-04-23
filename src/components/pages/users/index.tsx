@@ -22,8 +22,10 @@ const User = () => {
       render: (record: any) => {
         return (
           <>
-            <EditOutlined onClick={() => handleEdit(record)} />
-            <DeleteOutlined style={{ color: 'red', marginLeft: "10px" }}
+            <EditOutlined
+              style={{ fontSize: "20px" }}
+              onClick={() => handleEdit(record)} />
+            <DeleteOutlined style={{ color: 'red', marginLeft: "10px", fontSize: "20px" }}
               onClick={() => handleDelete(record)}
             />
           </>
