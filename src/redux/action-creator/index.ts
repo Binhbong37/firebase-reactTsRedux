@@ -1,7 +1,7 @@
 // import axios from 'axios'
 import {Dispatch} from 'redux';
 import { DocumentData, QuerySnapshot, onSnapshot, addDoc,
-  deleteDoc, doc
+  deleteDoc, doc, setDoc
  } from 'firebase/firestore';
 import { Action } from "../actions";
 import { ActionType } from "../action-types";
@@ -54,4 +54,10 @@ export const addNewUser = (newUser: any) => async(dispatch:Dispatch) => {
 export const deleteUser = (id: any) => async(dispatch: Dispatch) => {
   const document = doc(fireStore, `users/${id}`);
   await deleteDoc(document);
+}
+
+
+export const editUser = (user:any) => async(dispatch: Dispatch) =>{
+  const getUser = doc(fireStore, `users/${user.id}`);
+  await setDoc(getUser, user, {merge: true})
 }

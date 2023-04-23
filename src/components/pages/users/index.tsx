@@ -1,5 +1,5 @@
-import { useEffect } from 'react';
-import { Button, Table } from 'antd';
+import { useEffect, useState } from 'react';
+import { Button, Table, Modal, Input } from 'antd';
 import { EditOutlined, DeleteOutlined, PlusCircleOutlined } from "@ant-design/icons";
 import { Link } from 'react-router-dom'
 import './addUser.css'
@@ -7,6 +7,8 @@ import './addUser.css'
 import { useTypeSelector } from '../../../helpers/useTypeSelector';
 import { useAction } from '../../../helpers/useAction';
 const User = () => {
+  const [isEdit, setEditing] = useState(false);
+  const [userEdit, setUserEdit] = useState<any>({})
 
   const columns = [
     { key: 'id', title: "ID", dataIndex: 'id' },
@@ -18,7 +20,7 @@ const User = () => {
       render: (record: any) => {
         return (
           <>
-            <EditOutlined />
+            <EditOutlined onClick={() => handleEdit(record)} />
             <DeleteOutlined style={{ color: 'red', marginLeft: "10px" }}
               onClick={() => handleDelete(record)}
             />
@@ -55,7 +57,7 @@ const User = () => {
   //   })
   // }, [])
 
-  const { fetchData, deleteUser } = useAction();
+  const { fetchData, deleteUser, editUser } = useAction();
   const { data } = useTypeSelector(state => state.fetchData);
   // console.log(err)
   // console.log(loading)
@@ -64,9 +66,23 @@ const User = () => {
   }, [])
 
   const handleDelete = (user: any) => {
-    deleteUser(user.id)
+    Modal.confirm({
+      title: 'Are you sure to delete this user?',
+      okText: "Yes",
+      okType: 'danger',
+      onOk: () => {
+        deleteUser(user.id)
+
+      }
+    })
 
   }
+
+  const handleEdit = (user: any) => {
+    setEditing(true)
+    setUserEdit(user)
+  }
+
 
   return (
     <div className='view-list'>
@@ -80,6 +96,32 @@ const User = () => {
       <Table rowKey="id" columns={columns} dataSource={data}
         scroll={{ y: 500 }}
       />
+      <Modal
+        title="Edit User"
+        open={isEdit}
+        okText="Save"
+        onCancel={() => {
+          setEditing(false)
+        }}
+        onOk={() => {
+          editUser(userEdit)
+
+          setEditing(false)
+        }}
+
+      >
+        <Input value={userEdit?.lName} onChange={(e: any) => setUserEdit((prev: any) => {
+          return { ...prev, lName: e.target.value }
+        })} />
+        <Input value={userEdit?.email}
+          onChange={(e: any) => {
+            setUserEdit((prev: any) => {
+              return { ...prev, email: e.target.value }
+            })
+          }}
+        />
+
+      </Modal>
     </div>
   )
 }
