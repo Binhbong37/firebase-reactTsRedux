@@ -64,9 +64,9 @@ const User = () => {
   const { fetchData, deleteUser, editUser } = useAction();
   const { data, loading } = useTypeSelector(state => state.fetchData);
   // console.log(err)
-  // console.log(loading)
+
   useEffect(() => {
-    console.log("Fetch dât")
+
     fetchData()
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
