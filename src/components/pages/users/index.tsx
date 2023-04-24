@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
-import { Button, Table, Modal, Input } from 'antd';
+import { Button, Table, Modal, Input, Spin } from 'antd';
 import { EditOutlined, DeleteOutlined, PlusCircleOutlined } from "@ant-design/icons";
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 import './addUser.css'
 
 import { useTypeSelector } from '../../../helpers/useTypeSelector';
@@ -62,10 +62,11 @@ const User = () => {
   // }, [])
 
   const { fetchData, deleteUser, editUser } = useAction();
-  const { data } = useTypeSelector(state => state.fetchData);
+  const { data, loading } = useTypeSelector(state => state.fetchData);
   // console.log(err)
   // console.log(loading)
   useEffect(() => {
+    console.log("Fetch dât")
     fetchData()
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
@@ -99,14 +100,19 @@ const User = () => {
     <div className='view-list'>
 
       <h2>List User</h2>
-      <Button style={{ marginBottom: '10px' }}>
-        <Link to={'/addUser'}>
-          <PlusCircleOutlined /> {" "}
-          Add User</Link>
-      </Button>
-      <Table rowKey="id" columns={columns} dataSource={data}
-        scroll={{ y: 500 }}
-      />
+      {loading ? <Spin size='large' /> : (
+        <>
+
+          <Link to={'/addUser'}>
+            <Button style={{ marginBottom: '10px' }}>
+              <PlusCircleOutlined /> {" "}
+              Add User
+            </Button>
+          </Link>
+          <Table rowKey="id" columns={columns} dataSource={data}
+            scroll={{ y: 500 }}
+          />
+        </>)}
       <Modal
         title="Edit User"
         open={isEdit}

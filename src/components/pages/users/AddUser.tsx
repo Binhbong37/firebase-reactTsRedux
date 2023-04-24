@@ -13,10 +13,8 @@ const AddUser = () => {
     if (Object.keys(newUser).length === 0 || newUser.outOfDate === false) {
       return;
     }
-
     addNewUser(newUser)
     navigate('/')
-
   }
 
   useEffect(() => {
