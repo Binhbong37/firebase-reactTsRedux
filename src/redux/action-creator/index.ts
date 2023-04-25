@@ -32,6 +32,7 @@ export const fetchData = () => async (dispatch: Dispatch<Action>) => {
 
 
 export const addNewUser = (newUser: any) => async(dispatch:Dispatch<Action>) => {
+
   const newAge =new Date().getFullYear() - newUser.dob.$y 
   const newUserAdd = {
     lName: newUser.lName,
