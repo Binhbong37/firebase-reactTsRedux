@@ -1,8 +1,8 @@
 .header {
   background-color: var(--primary-color);
-  // width: 1440px;
-  width: 100%;
-  height: 100px;
+  width: 1924.5px;
+  // width: 100%;
+  height: 107.82px;
   position: relative;
 
   .header-logo {
@@ -19,7 +19,6 @@
     }
   }
 
-
   .header-right {
     position: absolute;
     width: 550px;
@@ -31,7 +30,6 @@
     align-items: center;
     color: white;
     font-size: 18px;
-
 
     .list-items {
       display: flex;
@@ -51,17 +49,14 @@
         }
       }
     }
-
-
   }
-
 }
 
 .ellipse {
   background-color: var(--primary-color);
-  // width: 1440px;
-  width: 100%;
-  height: 20px;
+  width: 1924.5px;
+  // width: 100%;
+  height: 107.82px;
   border-radius: 50% / 100%;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
@@ -73,4 +68,10 @@
   border: 2px solid white;
   border-radius: 33px;
   font-weight: 700;
+}
+
+.telphone {
+  border: 1px solid white;
+  border-radius: 50%;
+  padding: 8px;
 }

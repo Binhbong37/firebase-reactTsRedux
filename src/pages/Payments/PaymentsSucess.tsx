@@ -12,4 +12,15 @@ const PaymentsSucess: React.FC = () => {
   )
 }
 
-export default PaymentsSucess
+export default PaymentsSucess;
+
+
+
+/* 
+position: absolute;
+width: 1920px;
+height: 1104px;
+left: 0px;
+top: 0px;
+
+*/

@@ -1,8 +1,10 @@
 import React from 'react';
-import logo from '../../public/imgs/titleLogo.png';
+import logo from '../../public/imgs/litleLogo.png';
 import { NavLink } from "react-router-dom";
+import TelePhone from '../Icons/Telephone';
 
 const Header: React.FC = () => {
+
   return (
     <>
       <div className='header'>
@@ -39,6 +41,7 @@ const Header: React.FC = () => {
             </NavLink>
           </ul>
           <div className='contactNumber'>
+            <span className='telphone'><TelePhone /></span>
             0123456789
           </div>
         </div>
