@@ -16,10 +16,11 @@ const Home: React.FC = () => {
   return (
     <div className="wrapper">
       <div className="img-title">
-        <div className="img-top">
-          <img src={damsen} alt="img" />
-        </div>
+
+        <img src={damsen} alt="img" />
+
         <h2 className="title-page">ĐẦM SEN <br /> PARK</h2>
+
       </div>
       <div className="home-content">
         <div className="home-content__left"></div>
