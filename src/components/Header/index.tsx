@@ -6,48 +6,56 @@ import TelePhone from '../Icons/Telephone';
 const Header: React.FC = () => {
 
   return (
-    <>
+    <header className='header-container'>
       <div className='header'>
-        <div className='header-logo'>
-          <img src={logo} alt='LogoTiltle' />
-        </div>
-        <div className='header-right'>
+        <div className='wrapper header-layout'>
+          <div className='header-logo'>
+            <img src={logo} alt='LogoTiltle' />
+          </div>
           <ul className='list-items'>
-            <NavLink
+            <li><NavLink
               to="/"
               className={({ isActive, isPending }) =>
                 isPending ? "pending" : isActive ? "active" : ""
               }
             >
-              <li>Trang chủ</li>
-            </NavLink>
+              Trang chủ
+            </NavLink></li>
 
-            <NavLink
+            <li><NavLink
               to="/event"
               className={({ isActive, isPending }) =>
                 isPending ? "pending" : isActive ? "active" : ""
               }
-            >
-              <li>Sự kiện</li>
+            > Sự kiện
             </NavLink>
+            </li>
 
-            <NavLink
-              to="/contact"
-              className={({ isActive, isPending }) =>
-                isPending ? "pending" : isActive ? "active" : ""
-              }
-            >
-              <li>Liên hệ</li>
-            </NavLink>
+            <li>
+              <NavLink
+                to="/contact"
+                className={({ isActive, isPending }) =>
+                  isPending ? "pending" : isActive ? "active" : ""
+                }
+              >
+                Liên hệ
+              </NavLink>
+            </li>
           </ul>
-          <div className='contactNumber'>
-            <span className='telphone'><TelePhone /></span>
-            0123456789
-          </div>
+          <div className='header-right'>
+            <p className='telphone'><TelePhone /></p>
+            <p>0123456789
+            </p>          </div>
+
         </div>
       </div>
-      <div className="ellipse"></div>
-    </>
+      {/* <div className='ellipse'></div> */}
+    </header>
+
+
+
+
+
   )
 }
 
