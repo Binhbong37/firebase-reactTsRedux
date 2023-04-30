@@ -25,7 +25,7 @@ const Home: React.FC = () => {
       <div className="home-content">
         <div className="home-content__left"></div>
         <div className="home-content__right">
-          <h3 className="home-content__right-title">VÉ CỦA BẠN</h3>
+          <h3 className="home-contents__right-title">VÉ CỦA BẠN</h3>
           <Form className="home-content__right-form">
             <Form.Item label="">
               <Select value={'Gói gia đình'}>
@@ -49,7 +49,6 @@ const Home: React.FC = () => {
             <Form.Item
               name="phone"
               label=""
-
             >
               <Input placeholder="Nhập số điện thoại" style={{ width: '100%' }} />
             </Form.Item>
@@ -57,7 +56,6 @@ const Home: React.FC = () => {
             <Form.Item
               name="email"
               label=""
-
             >
               <Input placeholder="Nhập địa chỉ email" />
             </Form.Item>
