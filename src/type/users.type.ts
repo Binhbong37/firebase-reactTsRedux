@@ -1,6 +1,7 @@
 export interface NewUsersType {
-  age?: number,
-  email?: string
-  id?: string,
-  lName?:string,
+  loaiVe?: string,
+  soLuong?: number,
+  ngaySuDung?: Date,
+  hoTen?:string,
+  email?:string
 }

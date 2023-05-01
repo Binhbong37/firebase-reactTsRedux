@@ -7,8 +7,18 @@ import ContactPage from './pages/ContactPage';
 import Payments from './pages/Payments';
 import PaymentsSucess from './pages/Payments/PaymentsSucess';
 import E404Page from './components/E404Page';
-import bg_img from './public/imgs/bg.png'
+import bg_img from './public/imgs/bg.png';
+import { useAppDispatch } from './components/UseTypeRedux';
+import { useEffect } from 'react';
+import { getUsers } from './features/users/userSlice';
+
 function App() {
+  const dispatch = useAppDispatch()
+
+  useEffect(() => {
+    console.log('app')
+    dispatch(getUsers())
+  }, [dispatch])
 
   return (
     <BrowserRouter>
