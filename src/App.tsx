@@ -10,14 +10,13 @@ import E404Page from './components/E404Page';
 import bg_img from './public/imgs/bg.png';
 import { useAppDispatch } from './components/UseTypeRedux';
 import { useEffect } from 'react';
-import { getUsers } from './features/users/userSlice';
+import { fetchUsers } from './store';
 
 function App() {
   const dispatch = useAppDispatch()
 
   useEffect(() => {
-    console.log('app')
-    dispatch(getUsers())
+    dispatch(fetchUsers())
   }, [dispatch])
 
   return (

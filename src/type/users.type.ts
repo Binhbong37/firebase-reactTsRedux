@@ -1,7 +1,8 @@
 export interface NewUsersType {
   loaiVe?: string,
   soLuong?: number,
-  ngaySuDung?: Date,
+  ngaySuDung?: string,
   hoTen?:string,
-  email?:string
+  email?:string,
+  phone?:string
 }
