@@ -6,13 +6,15 @@ import { addUser } from '../thunks/addUser';
 interface FetchData {
   loading: boolean,
   err: null | string,
-  data: any
+  data: any,
+  userId: string
 }
 
 const intialState: FetchData = {
   loading: false,
   err: null,
-  data: []
+  data: [],
+  userId:''
 } 
 
 // Slice
@@ -30,7 +32,7 @@ const userSlice = createSlice({
     });
     builder.addCase(fetchUsers.fulfilled, (state, action) => {
       state.loading = false
-      state.data = []
+      state.data = action.payload
     });
     builder.addCase(fetchUsers.rejected, (state, action: any) => {
       state.err = action.payload
@@ -43,12 +45,11 @@ const userSlice = createSlice({
     })
     builder.addCase(addUser.fulfilled, (state, action) => {
       state.loading = false
-      console.log(state)
-      console.log(action)
+      state.userId = action.payload
     })
     builder.addCase(addUser.rejected, (state, action) => {
       state.loading = false
-      console.log(action)
+      console.log(action.payload)
     })
   },
 

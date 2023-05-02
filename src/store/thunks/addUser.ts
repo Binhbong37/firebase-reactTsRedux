@@ -1,9 +1,11 @@
 import {createAsyncThunk} from '@reduxjs/toolkit';
-// import axios from 'axios'
-// import { URI } from '../../helpers/baseURI';
+import axios from 'axios'
+import { URI } from '../../helpers/baseURI';
 
-export const addUser = createAsyncThunk('user/add', async(user: any) => {
-  console.log(user)
-  return user
+import { NewUsersType } from '../../type/users.type';
+
+export const addUser = createAsyncThunk('user/add', async(user: NewUsersType) => {
+ const response = await axios.post(URI, user)
+  return response.data.name
 })
 

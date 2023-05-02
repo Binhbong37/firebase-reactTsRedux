@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { useAppDispatch } from "../../components/UseTypeRedux";
+import { useAppDispatch } from "../../helpers/UseTypeRedux";
 import {
   Button,
   DatePicker,

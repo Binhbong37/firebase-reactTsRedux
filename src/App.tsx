@@ -8,7 +8,7 @@ import Payments from './pages/Payments';
 import PaymentsSucess from './pages/Payments/PaymentsSucess';
 import E404Page from './components/E404Page';
 import bg_img from './public/imgs/bg.png';
-import { useAppDispatch } from './components/UseTypeRedux';
+import { useAppDispatch } from './helpers/UseTypeRedux';
 import { useEffect } from 'react';
 import { fetchUsers } from './store';
 

@@ -1,5 +1,5 @@
-import React from 'react'
-import { Link } from 'react-router-dom';
+import React, { useEffect } from 'react'
+import { Link, useNavigate } from 'react-router-dom';
 import {
   Button,
   DatePicker,
@@ -9,7 +9,16 @@ import {
   Col, Row
 } from 'antd';
 
+
 const Payments: React.FC = () => {
+  const userId = localStorage.getItem('userId')
+  console.log(userId)
+  const navigate = useNavigate()
+  useEffect(() => {
+    if (!userId) {
+      navigate('/')
+    }
+  }, [userId, navigate])
   return (
     <div className='wrapper'>
       <h2 className='title-page' style={{ textAlign: "center" }}>Thanh toán</h2>
