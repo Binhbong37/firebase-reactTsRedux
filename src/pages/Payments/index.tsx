@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react'
-import { Link, useNavigate } from 'react-router-dom';
 import {
   Button,
   DatePicker,
@@ -9,48 +8,57 @@ import {
   Col, Row
 } from 'antd';
 
+import { useAppSelector, useAppDispatch } from '../../helpers/UseTypeRedux';
+import { fetchUserId } from '../../store';
+// import { NewUsersType } from '../../type/users.type';
+
 
 const Payments: React.FC = () => {
-  const userId = localStorage.getItem('userId')
-  console.log(userId)
-  const navigate = useNavigate()
+  // const [user, setUser] = useState<NewUsersType>({})
+  const dispatch = useAppDispatch()
+  const { userId, userIdObj } = useAppSelector(state => state.userSlice)
+
+
   useEffect(() => {
-    if (!userId) {
-      navigate('/')
-    }
-  }, [userId, navigate])
+    if (!userId) return;
+    dispatch(fetchUserId(userId))
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [userId, dispatch])
+
+  const { soLuong, email, hoTen, phone } = userIdObj;
   return (
     <div className='wrapper'>
       <h2 className='title-page' style={{ textAlign: "center" }}>Thanh toán</h2>
       <div className="home-content">
         <div className="home-content__left">
-          <h3 className="home-content__left-title">VÉ CỔNG - VÉ GIA ĐÌNH</h3>
+          <h3 className="home-content__left-title">VÉ CỔNG - {userIdObj?.loaiVe === "caNhan" ? "VÉ CÁ NHÂN" : "VÉ GIA ĐÌNH"}</h3>
           <Form className='form-payment'>
             <Row>
               <Col span={8}>
                 <Form.Item label="Số tiền thanh toán">
-                  <Input value={"123 456 789"} style={{ width: "100%" }} />
+                  <Input value={(soLuong && soLuong * 50000) || ''} style={{ width: "100%" }} disabled />
                 </Form.Item>
               </Col>
               <Col span={8}>
                 <Form.Item label="Số lượng vé">
-                  <Input value={"7"} />
+                  <Input value={soLuong || ''} disabled />
                 </Form.Item>
               </Col>
               <Col span={8}>
                 <Form.Item label="Ngày sử dụng">
-                  <Input value={"01/06/2023"} style={{ width: "100%" }} />
+                  <Input value={"01/06/2023"} style={{ width: "100%" }} disabled />
                 </Form.Item>
               </Col>
             </Row>
             <Form.Item label="Thông tin liên hệ">
-              <Input value={"Hoàng Văn Bình"} />
+              <Input value={hoTen || ''} disabled />
             </Form.Item>
             <Form.Item label="Số điện thoại">
-              <Input value={"123 456 789"} />
+              <Input value={phone || ""} disabled />
             </Form.Item>
             <Form.Item label="Email">
-              <Input value={"hoangvanbinh@gmail.com"} />
+              <Input value={email || ''} disabled />
             </Form.Item>
           </Form>
         </div>
@@ -62,10 +70,10 @@ const Payments: React.FC = () => {
             </Form.Item>
 
             <Form.Item label="Họ tên chủ thẻ">
-              <Input value={'Hoàng Văn Bình'} />
+              <Input value={"chu the"} />
             </Form.Item>
             <Form.Item label="Ngày hết hạn">
-              <DatePicker />
+              <DatePicker style={{ width: "100%" }} />
             </Form.Item>
 
             <Form.Item
@@ -74,7 +82,9 @@ const Payments: React.FC = () => {
               <Input value={"..."} />
             </Form.Item>
 
-            <Link to={'/paymentsucess'}><Button className="btn btn-ticket">Thanh toán</Button></Link>
+            <Button className="btn btn-ticket"
+              disabled
+            >Thanh toán</Button>
           </Form>
         </div>
 

@@ -5,7 +5,7 @@ import { URI } from '../../helpers/baseURI';
 import { NewUsersType } from '../../type/users.type';
 
 export const addUser = createAsyncThunk('user/add', async(user: NewUsersType) => {
- const response = await axios.post(URI, user)
+ const response = await axios.post(`${URI}.json`, user)
   return response.data.name
 })
 

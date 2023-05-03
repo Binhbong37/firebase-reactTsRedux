@@ -3,15 +3,15 @@ import axios from 'axios'
 import { URI } from '../../helpers/baseURI';
 
 
-export const fetchUsers = createAsyncThunk(
-  'user/getUsers',
-  async (data, thunkApi) => {
+export const fetchUserId = createAsyncThunk(
+  'user/getUserId',
+  async (userId: string) => {
     try {
-      const response = await axios.get(`${URI}.json`);
+      const response = await axios.get(`${URI}/${userId}.json`);
       console.log(response)
       return response.data
     } catch (error: any) {
-      console.log(thunkApi.rejectWithValue(error.message))
+      console.log(error)
     }
   }
 )
