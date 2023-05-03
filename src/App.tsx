@@ -33,7 +33,7 @@ function App() {
             <Route path='/event/:id' element={<EventDetail />} />
             <Route path='/contact' element={<ContactPage />} />
             <Route path='/payment' element={<Payments />} />
-            <Route path='paymentsucess' element={<PaymentsSucess />} />
+            <Route path='/paymentsuccess' element={<PaymentsSucess />} />
             <Route path='*' element={<E404Page />} />
           </Routes>
         </div>

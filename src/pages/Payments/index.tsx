@@ -10,6 +10,7 @@ import {
 
 import { useAppSelector, useAppDispatch } from '../../helpers/UseTypeRedux';
 import { fetchUserId } from '../../store';
+import { useNavigate } from 'react-router-dom';
 // import { NewUsersType } from '../../type/users.type';
 
 
@@ -27,6 +28,16 @@ const Payments: React.FC = () => {
   }, [userId, dispatch])
 
   const { soLuong, email, hoTen, phone } = userIdObj;
+
+  const navigate = useNavigate()
+  // btn thanh toan
+  const handleClick = (value: any) => {
+    if (value.outOfDate === false) {
+      return;
+    }
+
+    navigate('/paymentsuccess')
+  }
   return (
     <div className='wrapper'>
       <h2 className='title-page' style={{ textAlign: "center" }}>Thanh toán</h2>
@@ -64,26 +75,56 @@ const Payments: React.FC = () => {
         </div>
         <div className="home-content__right">
           <h3 className="home-contents__right-title">THÔNG TIN THANH TOÁN</h3>
-          <Form className="home-content__right-form rest-form">
-            <Form.Item label="Số thẻ">
-              <InputNumber value={"123 456 789"} style={{ width: "100%" }} />
+
+          <Form className="home-content__right-form rest-form"
+            onFinish={(values) => {
+              handleClick(values)
+            }}
+            onFinishFailed={(err) => {
+              handleClick(err)
+            }}
+          >
+            <Form.Item label="Số thẻ"
+              name={"soThe"}
+              rules={[{
+                required: true,
+                message: 'Nhập số thẻ'
+              },
+              ]}
+            >
+              <InputNumber placeholder='Nhập số thẻ' style={{ width: "100%" }} />
             </Form.Item>
 
-            <Form.Item label="Họ tên chủ thẻ">
-              <Input value={"chu the"} />
+            <Form.Item label="Họ tên chủ thẻ"
+              name={'chuThe'}
+              rules={[{
+                required: true,
+                message: 'Nhập tên chủ thẻ'
+              },
+              ]}
+            >
+              <Input placeholder='Nhập tên chủ thẻ' />
             </Form.Item>
-            <Form.Item label="Ngày hết hạn">
-              <DatePicker style={{ width: "100%" }} />
+            <Form.Item label="Ngày hết hạn"
+              name={'ngayHetHan'}
+              rules={[{
+                required: true,
+                message: 'Nhập ngày hết hạn'
+              },
+              ]}
+            >
+              <DatePicker placeholder='Ngày hết hạn' style={{ width: "100%" }} />
             </Form.Item>
 
             <Form.Item
+              name={'loaiRap'}
               label="CGV/CCV"
             >
               <Input value={"..."} />
             </Form.Item>
 
-            <Button className="btn btn-ticket"
-              disabled
+            <Button className={!userId ? `btn-disable` : "btn btn-ticket"}
+              htmlType="submit"
             >Thanh toán</Button>
           </Form>
         </div>
