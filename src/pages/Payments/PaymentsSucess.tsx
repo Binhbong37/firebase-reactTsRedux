@@ -1,6 +1,7 @@
 import React from 'react';
 import { Row } from 'antd';
 import CardItem from '../../components/CardItems';
+import { CaretLeftOutlined, CaretRightOutlined } from '@ant-design/icons';
 
 const PaymentsSucess: React.FC = () => {
   return (
@@ -9,6 +10,14 @@ const PaymentsSucess: React.FC = () => {
         <h2 className='title-page' style={{ textAlign: 'center' }}>Thanh toán thành công</h2>
         <div className="payment">
           <div className="payment-center">
+            <div className='icon-left'>
+              <CaretLeftOutlined />
+
+            </div>
+            <div className='icon-right'>
+              <CaretRightOutlined />
+            </div>
+
             <div className='grid'>
               <Row justify="space-evenly">
                 <CardItem />

@@ -1,6 +1,7 @@
 .img-title {
   display: flex;
   align-items: center;
+  margin-top: 7rem;
 
   img {
     width: 10%;
@@ -23,7 +24,7 @@
   padding: 20px;
 
   .home-content__left {
-    width: 600px;
+    width: 650px;
     height: 380px;
     background-color: #FFF6D4;
     border: 3px dashed #FFB489;
@@ -32,6 +33,12 @@
     top: 50%;
     transform: translateY(-50%);
     border-radius: 10px;
+    padding: 1rem;
+
+    p {
+      color: #23221F;
+      line-height: 1.5;
+    }
 
     .home-content__left-title {
       font-weight: 600;

@@ -9,53 +9,49 @@ const Header: React.FC = () => {
     <header className='header-container'>
       <div className='header'>
         <div className='wrapper header-layout'>
-          <div className='header-logo'>
+          <div className='header-layout__left'>
             <img src={logo} alt='LogoTiltle' />
           </div>
-          <ul className='list-items'>
-            <li><NavLink
-              to="/"
-              className={({ isActive, isPending }) =>
-                isPending ? "pending" : isActive ? "active" : ""
-              }
-            >
-              Trang chủ
-            </NavLink></li>
-
-            <li><NavLink
-              to="/event"
-              className={({ isActive, isPending }) =>
-                isPending ? "pending" : isActive ? "active" : ""
-              }
-            > Sự kiện
-            </NavLink>
-            </li>
-
-            <li>
-              <NavLink
-                to="/contact"
+          <div className='header-layout__right'>
+            <ul className='list-items'>
+              <li><NavLink
+                to="/"
                 className={({ isActive, isPending }) =>
                   isPending ? "pending" : isActive ? "active" : ""
                 }
               >
-                Liên hệ
+                Trang chủ
+              </NavLink></li>
+
+              <li><NavLink
+                to="/event"
+                className={({ isActive, isPending }) =>
+                  isPending ? "pending" : isActive ? "active" : ""
+                }
+              > Sự kiện
               </NavLink>
-            </li>
-          </ul>
-          <div className='header-right'>
-            <p className='telphone'><TelePhone /></p>
-            <p>0123456789
-            </p>          </div>
+              </li>
+
+              <li>
+                <NavLink
+                  to="/contact"
+                  className={({ isActive, isPending }) =>
+                    isPending ? "pending" : isActive ? "active" : ""
+                  }
+                >
+                  Liên hệ
+                </NavLink>
+              </li>
+            </ul>
+            <div className='header-right'>
+              <p className='telphone'><TelePhone /></p>
+              <p>0123456789</p>
+            </div>
+          </div>
 
         </div>
       </div>
-      {/* <div className='ellipse'></div> */}
     </header>
-
-
-
-
-
   )
 }
 

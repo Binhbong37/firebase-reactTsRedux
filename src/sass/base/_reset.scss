@@ -13,11 +13,23 @@
 
 :root {
   --primary-color: #ED7200;
-  --second-font: "iCiel-Koni-Black"
+  --bg-nav-shadow: 0px 4px 35px rgba(162, 58, 0, 0.75);
+  --second-font: "iCiel-Koni-Black";
+  --shadow-btn: #BD000B;
+  --bg-btn: #FF000A;
+  --shadow-box: #FFCA7B;
+  --bg-box: #FDE8B3;
+  --main-box: #FFF6D4;
+  --text-color: #23221F;
+  --bg-CardTitle: linear-gradient(176.02deg, #FF000A -12.67%, #C2000B 101.08%);
+  --bg-color: radial-gradient(97.91% 60.14% at 50% 50%, #FFDB7E 0%, #FF7A00 100%);
+
+
 }
 
 html,
 body {
+  background: var(--bg-color);
   font-family: 'Montserrat', sans-serif;
 }
 
@@ -29,11 +41,21 @@ li {
   list-style: none;
 }
 
-.container {
-  position: relative;
-  background: radial-gradient(97.91% 60.14% at 50% 50%, #FFDB7E 0%, #FF7A00 100%);
+
+.wrapper-bg {
+  background-image: url('../../public/imgs/bg.png');
   width: 100%;
-  height: 100vh;
+  min-height: 40rem;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  z-index: 0;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+  margin-right: 5rem;
 }
 
 .bg-logo {
@@ -54,10 +76,7 @@ li {
 .wrapper {
   max-width: 1200px;
   width: 100%;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 10;
+  margin: 0 auto;
 }
 
 .main {
