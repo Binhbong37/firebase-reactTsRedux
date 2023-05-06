@@ -1,0 +1,27 @@
+.cartTile-container {
+  padding: 0.5rem;
+  border-bottom-right-radius: 50%;
+  border-bottom-left-radius: 50%;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  background: var(--bg-CardTitle);
+  height: 70px;
+  margin-top: -3rem;
+
+  .cartTile-inside {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+    border-top-left-radius: 0.75rem;
+    border-top-right-radius: 0.75rem;
+    border: 2px dashed #fff;
+    font-family: var(--second-font);
+    color: #fff;
+    height: 100%;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+
+  }
+}

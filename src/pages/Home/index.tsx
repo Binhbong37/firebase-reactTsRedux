@@ -2,6 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useAppDispatch } from "../../helpers/UseTypeRedux";
 import WrapperDasboard from "../../components/WrapperDas";
+import circle from '../../public/imgs/circle.png'
 import {
   Button,
   DatePicker,
@@ -15,6 +16,8 @@ import damsen from '../../public/imgs/damsen.png';
 import { NewUsersType } from "../../type/users.type";
 import { addUser } from "../../store";
 import AroundBox from "../../components/AroundBox";
+import Star from "../../components/Icons/Star";
+import CartTitle from "../../components/Carttitle";
 
 const Home: React.FC = () => {
   const dispatch = useAppDispatch()
@@ -145,11 +148,33 @@ const Home: React.FC = () => {
           <img src={damsen} alt="img" />
           <h2 className="title-page">ĐẦM SEN <br /> PARK</h2>
         </div>
-        <div className="">
+        <div className="main">
           <AroundBox style={{ width: "60%" }}>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ac mollis justo. Etiam volutpat tellus quis risus volutpat, ut posuere ex facilisis. <br />
               <br />
               Suspendisse iaculis libero lobortis condimentum gravida. Aenean auctor iaculis risus, lobortis molestie lectus consequat a.</p>
+            <div className="star-text">
+              <p><Star /></p>
+              <p><b>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</b></p>
+            </div>
+            <div className="star-text">
+              <p><Star /></p>
+              <p><b>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</b></p>
+            </div>
+            <div className="star-text">
+              <p><Star /></p>
+              <p><b>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</b></p>
+            </div>
+            <div className="star-text">
+              <p><Star /></p>
+              <p><b>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</b></p>
+            </div>
+          </AroundBox>
+          <img src={circle} alt="circle" />
+          <AroundBox style={{ width: "30%" }}>
+            <CartTitle>
+              Vé của bạn
+            </CartTitle>
           </AroundBox>
         </div>
       </div>
