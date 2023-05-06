@@ -18,14 +18,14 @@ const FormHome: React.FC = () => {
       </Row>
 
       <Row>
-        <Col span={12}>
+        <Col flex={2}>
           <input
             placeholder="Số lượng vé"
             type="number"
             name="number"
           />
         </Col>
-        <Col span={12}>
+        <Col flex={3}>
           <Row>
             <Col flex={4}>
               <input
@@ -43,7 +43,21 @@ const FormHome: React.FC = () => {
           </Row>
         </Col>
       </Row>
-
+      <input
+        placeholder="Họ và tên"
+        type="text"
+        name="fullname"
+      />
+      <input
+        placeholder="Số điện thoại"
+        type="text"
+        name="phone"
+      />
+      <input
+        placeholder="Địa chỉ email"
+        type="text"
+        name="email"
+      />
 
 
 

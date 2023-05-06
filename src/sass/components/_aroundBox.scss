@@ -21,6 +21,12 @@
         gap: 1rem;
         margin-left: 7rem;
       }
+
+      .form-home {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+      }
     }
   }
 }
