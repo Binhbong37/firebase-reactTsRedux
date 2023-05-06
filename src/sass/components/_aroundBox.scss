@@ -1,7 +1,23 @@
 .box-container {
   position: relative;
   border-radius: 30px;
-  box-shadow: var(--shadow-box);
+  box-shadow: 0px 1rem var(--shadow-box);
+  ;
   padding-top: 3rem;
   z-index: 22;
+
+  .box-inside {
+    border-radius: 30px;
+    background-color: var(--bg-boxinside);
+    height: 100%;
+    padding: 1rem;
+
+    .box-content {
+      border-radius: 20px;
+      border: 2px dashed var(--dashed-color);
+      background-color: var(--main-box);
+      height: 100%;
+      padding: 1rem 2rem;
+    }
+  }
 }
