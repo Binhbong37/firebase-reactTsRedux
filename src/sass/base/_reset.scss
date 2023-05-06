@@ -5,12 +5,6 @@
   src: url("../../public/fonts/iCiel-Koni-Black.otf");
 }
 
-* {
-  margin: 0px;
-  padding: 0px;
-  box-sizing: border-box;
-}
-
 :root {
   --primary-color: #ED7200;
   --bg-nav-shadow: 0px 4px 35px rgba(162, 58, 0, 0.75);
@@ -25,86 +19,93 @@
   --text-color: #23221F;
   --bg-CardTitle: linear-gradient(176.02deg, #FF000A -12.67%, #C2000B 101.08%);
   --bg-color: radial-gradient(97.91% 60.14% at 50% 50%, #FFDB7E 0%, #FF7A00 100%);
-
-
 }
 
 html,
 body {
+  line-height: 1.5;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
   background: var(--bg-color);
   font-family: 'Montserrat', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+input,
+textarea,
+select,
+button {
+  outline: none;
+  font: inherit;
+}
+
+input {
+  line-height: normal;
+}
+
+label,
+button {
+  cursor: pointer;
+  user-select: none !important;
+}
+
+ul {
+  list-style: none;
 }
 
 a {
   text-decoration: none;
 }
 
-li {
-  list-style: none;
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+  user-select: none !important;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
 }
 
 
-.wrapper-bg {
-  background-image: url('../../public/imgs/bg.png');
-  width: 100%;
-  min-height: 40rem;
-  height: 100%;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  position: absolute;
-  z-index: 0;
-  // display: flex;
-  // justify-content: center;
-  // align-items: center;
-  margin-right: 5rem;
-}
+@media only screen and (max-width: 46.1875em) {
 
-.bg-logo {
-  height: 100vh;
-  width: 95%;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-
-
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  input[type="color"],
+  input[type="date"],
+  input[type="datetime"],
+  input[type="datetime-local"],
+  input[type="email"],
+  input[type="month"],
+  input[type="number"],
+  input[type="password"],
+  input[type="search"],
+  input[type="tel"],
+  input[type="text"],
+  input[type="time"],
+  input[type="url"],
+  input[type="week"],
+  select:focus,
+  textarea {
+    font-size: 16px;
   }
-}
-
-.wrapper {
-  max-width: 1200px;
-  width: 100%;
-  margin: 0 auto;
-}
-
-.main {
-  position: absolute;
-  top: 20%;
-  width: 100%;
-}
-
-.btn {
-  background-color: #FF000A;
-  left: 0px;
-  top: 0px;
-  border-radius: 0px;
-  outline: none;
-  border: none;
-  color: white;
-  border-radius: 10px;
-  font-family: var(--second-font);
-  cursor: pointer;
-  font-size: 28px;
-}
-
-.title-page {
-  color: white;
-  font-weight: 700;
-  font-size: 40px;
-  cursor: default;
-  font-family: var(--second-font);
 }
