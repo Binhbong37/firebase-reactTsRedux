@@ -14,6 +14,7 @@ import {
 import damsen from '../../public/imgs/damsen.png';
 import { NewUsersType } from "../../type/users.type";
 import { addUser } from "../../store";
+import AroundBox from "../../components/AroundBox";
 
 const Home: React.FC = () => {
   const dispatch = useAppDispatch()
@@ -143,7 +144,13 @@ const Home: React.FC = () => {
         <div className="img-title">
           <img src={damsen} alt="img" />
           <h2 className="title-page">ĐẦM SEN <br /> PARK</h2>
-
+        </div>
+        <div className="">
+          <AroundBox style={{ width: "60%" }}>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ac mollis justo. Etiam volutpat tellus quis risus volutpat, ut posuere ex facilisis. <br />
+              <br />
+              Suspendisse iaculis libero lobortis condimentum gravida. Aenean auctor iaculis risus, lobortis molestie lectus consequat a.</p>
+          </AroundBox>
         </div>
       </div>
     </WrapperDasboard>
