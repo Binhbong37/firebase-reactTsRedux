@@ -22,7 +22,7 @@ const FormHome: React.FC = () => {
           <input
             placeholder="Số lượng vé"
             type="number"
-            name="number"
+            name="soLuong"
           />
         </Col>
         <Col flex={3}>
@@ -31,7 +31,7 @@ const FormHome: React.FC = () => {
               <input
                 placeholder="Ngày sử dụng"
                 type="text"
-                name="date"
+                name="ngaySuDung"
                 onFocus={(e) => (e.target.type = "date")}
                 onBlur={(e) => (e.target.type = "text")}
                 min={new Date().toISOString().split("T")[0]}
@@ -46,7 +46,7 @@ const FormHome: React.FC = () => {
       <input
         placeholder="Họ và tên"
         type="text"
-        name="fullname"
+        name="hoTen"
       />
       <input
         placeholder="Số điện thoại"
@@ -59,10 +59,7 @@ const FormHome: React.FC = () => {
         name="email"
       />
 
-
-
-
-      <Button>
+      <Button style={{ width: "300px" }}>
         Đặt vé
       </Button>
     </form>
