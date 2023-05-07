@@ -15,7 +15,10 @@ const EventPage: React.FC = () => {
               cover={<img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />}
             >
               <Meta title="Europe Street beat" description="www.instagram.com" />
-            </Card></div>
+              <button>xem chi tiết</button>
+            </Card>
+
+            </div>
           </Col>
           <Col className="gutter-row" span={6}>
             <div> <Card
@@ -24,7 +27,9 @@ const EventPage: React.FC = () => {
               cover={<img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />}
             >
               <Meta title="Europe Street beat" description="www.instagram.com" />
-            </Card></div>
+            </Card>
+
+            </div>
           </Col>
           <Col className="gutter-row" span={6}>
             <div> <Card
@@ -33,7 +38,9 @@ const EventPage: React.FC = () => {
               cover={<img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />}
             >
               <Meta title="Europe Street beat" description="www.instagram.com" />
-            </Card></div>
+            </Card>
+
+            </div>
           </Col>
           <Col className="gutter-row" span={6}>
             <div> <Card
@@ -42,7 +49,9 @@ const EventPage: React.FC = () => {
               cover={<img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />}
             >
               <Meta title="Europe Street beat" description="www.instagram.com" />
-            </Card></div>
+            </Card>
+
+            </div>
           </Col>
         </Row>
       </div>

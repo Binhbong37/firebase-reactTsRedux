@@ -3,10 +3,20 @@ import Button from '../Button';
 import Calender from '../Icons/Calender';
 import BottomAround from '../Icons/BottomAroud';
 import { Col, Row } from 'antd';
+import { useNavigate } from 'react-router-dom';
 
 const FormHome: React.FC = () => {
+  const navigate = useNavigate()
+
+  const handleSubmitForm: React.FormEventHandler<HTMLFormElement> = (e) => {
+    e.preventDefault();
+    console.log('Kết quả')
+    navigate('/payment')
+  }
   return (
-    <form className='form-home' style={{ marginTop: "1rem" }}>
+    <form className='form-home' style={{ marginTop: "1rem" }}
+      onSubmit={handleSubmitForm}
+    >
       <Row>
         <Col flex={4}>
           <select name="loaiVe">
