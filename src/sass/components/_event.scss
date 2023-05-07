@@ -1,8 +1,14 @@
-.event-layout {
-  padding: 20px;
+.container-events {
+  background-image: url('../../public/imgs/event.png');
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+  position: relative;
 
-  .btn-detail {
-    height: 30px;
-    width: 100px;
+  .container-events__main {
+    position: absolute;
+    top: 30%;
+    left: 20%;
   }
 }
