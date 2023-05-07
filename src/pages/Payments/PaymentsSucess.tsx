@@ -1,12 +1,20 @@
 import React from 'react';
 
 import CardItem from '../../components/CardItems';
+import PreviousArrow from '../../components/Icons/PreviousArrow';
+import NextArrow from '../../components/Icons/NextArrow';
 
 
 
 const PaymentsSucess: React.FC = () => {
   return (
     <div className='container-paymentSucee'>
+      <div className='previousIcon'>
+        <PreviousArrow />
+      </div>
+      <div className='nextIcon'>
+        <NextArrow />
+      </div>
       <div className='container-paymentSucee__main'>
         <div className='container-paymentSucee__main-card'>
           <CardItem />

@@ -32,6 +32,18 @@
   height: 100vh;
   position: relative;
 
+  .previousIcon {
+    position: absolute;
+    top: 55%;
+    left: 16%;
+  }
+
+  .nextIcon {
+    position: absolute;
+    top: 55%;
+    right: 9%;
+  }
+
   .container-paymentSucee__main {
     position: absolute;
     top: 30%;
