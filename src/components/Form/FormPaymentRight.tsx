@@ -1,9 +1,19 @@
 import React from 'react'
-import Button from '../Button'
+import Button from '../Button';
+import { useNavigate } from 'react-router-dom';
 
 const FormPaymentRight: React.FC = () => {
+  const navigate = useNavigate()
+
+  const handleSubmitForm: React.FormEventHandler<HTMLFormElement> = (e) => {
+    e.preventDefault();
+    console.log('Kết quả payment')
+    navigate('/paymentsuccess')
+  }
   return (
-    <form className='form-group'>
+    <form className='form-group'
+      onSubmit={handleSubmitForm}
+    >
       <div className='form-control'>
         <label htmlFor="">Số thẻ</label>
         <input type="text" />
