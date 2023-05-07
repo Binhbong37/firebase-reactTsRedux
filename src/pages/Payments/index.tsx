@@ -1,12 +1,5 @@
 import React, { useEffect } from 'react'
-import {
-  Button,
-  DatePicker,
-  Form,
-  Input,
-  InputNumber,
-  Col, Row
-} from 'antd';
+import FormPaymentRight from '../../components/Form/FormPaymentRight';
 
 import { useAppSelector, useAppDispatch } from '../../helpers/UseTypeRedux';
 import { fetchUserId } from '../../store';
@@ -57,6 +50,7 @@ const Payments: React.FC = () => {
           <CartTitle style={{ width: "388px" }}>
             Thông tin thanh toán
           </CartTitle>
+          <FormPaymentRight />
 
         </AroundBox>
       </div>
