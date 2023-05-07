@@ -11,7 +11,11 @@ import {
 import { useAppSelector, useAppDispatch } from '../../helpers/UseTypeRedux';
 import { fetchUserId } from '../../store';
 import { useNavigate } from 'react-router-dom';
+import AroundBox from '../../components/AroundBox';
+import CartTitle from '../../components/Carttitle';
+import FormHome from '../../components/Form/FormHome';
 // import { NewUsersType } from '../../type/users.type';
+import circle from '../../public/imgs/circle.png'
 
 
 const Payments: React.FC = () => {
@@ -41,7 +45,32 @@ const Payments: React.FC = () => {
   return (
     <div className='container-payment'>
       <div className='container-payment__main'>
+        <AroundBox style={{ width: "950px" }}>
+          <CartTitle style={{ width: "388px" }}>
+            Vé cổng - Vé gia đình
+          </CartTitle>
+          <form className='form-group'>
+            <div className='form-control'>
+              <label>Số tiền thanh toán</label>
+              <input type="text" />
+            </div>
+            <div className='form-control'>
+              <label>Số lượng vé</label>
+              <input type="text" />
+            </div>
+            <div className='form-control'>
+              <label>Ngày sử dụng</label>
+              <input type="text" />
+            </div>
+          </form>
+        </AroundBox>
+        <img src={circle} alt="circle" />
+        <AroundBox style={{ width: "539px" }}>
+          <CartTitle style={{ width: "388px" }}>
+            Vé của bạn
+          </CartTitle>
 
+        </AroundBox>
       </div>
     </div>
   )

@@ -34,7 +34,7 @@ const Home: React.FC = () => {
   return (
     <div className="home-container">
       <div className="home-container__main">
-        <AroundBox style={{ width: "55%" }}>
+        <AroundBox style={{ width: "950px" }}>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ac mollis justo. Etiam volutpat tellus quis risus volutpat, ut posuere ex facilisis. <br />
             <br />
             Suspendisse iaculis libero lobortis condimentum gravida. Aenean auctor iaculis risus, lobortis molestie lectus consequat a.</p>
@@ -56,12 +56,11 @@ const Home: React.FC = () => {
           </div>
         </AroundBox>
         <img src={circle} alt="circle" />
-        <AroundBox style={{ width: "30%" }}>
+        <AroundBox style={{ width: "540px" }}>
           <CartTitle style={{ width: "280px" }}>
             Vé của bạn
           </CartTitle>
           <FormHome />
-
         </AroundBox>
       </div>
     </div>

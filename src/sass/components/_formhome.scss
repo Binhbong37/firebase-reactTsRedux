@@ -1,0 +1,17 @@
+.form-home {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  .calendar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 15px;
+  }
+
+  .group-2 {
+    display: flex;
+    column-gap: 10px;
+  }
+}
