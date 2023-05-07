@@ -1,0 +1,21 @@
+.form-group {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+  margin-top: 2rem;
+
+  .line-1 {
+    display: flex;
+    column-gap: 2rem;
+  }
+}
+
+
+.form-control {
+
+  label {
+    color: #23221F;
+    font-size: 20px;
+    font-weight: 700;
+  }
+}

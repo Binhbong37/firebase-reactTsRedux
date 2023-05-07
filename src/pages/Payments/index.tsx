@@ -16,6 +16,7 @@ import CartTitle from '../../components/Carttitle';
 import FormHome from '../../components/Form/FormHome';
 // import { NewUsersType } from '../../type/users.type';
 import circle from '../../public/imgs/circle.png'
+import FormPaymentLeft from '../../components/Form/FormPaymentLeft';
 
 
 const Payments: React.FC = () => {
@@ -49,25 +50,12 @@ const Payments: React.FC = () => {
           <CartTitle style={{ width: "388px" }}>
             Vé cổng - Vé gia đình
           </CartTitle>
-          <form className='form-group'>
-            <div className='form-control'>
-              <label>Số tiền thanh toán</label>
-              <input type="text" />
-            </div>
-            <div className='form-control'>
-              <label>Số lượng vé</label>
-              <input type="text" />
-            </div>
-            <div className='form-control'>
-              <label>Ngày sử dụng</label>
-              <input type="text" />
-            </div>
-          </form>
+          <FormPaymentLeft />
         </AroundBox>
         <img src={circle} alt="circle" />
         <AroundBox style={{ width: "539px" }}>
           <CartTitle style={{ width: "388px" }}>
-            Vé của bạn
+            Thông tin thanh toán
           </CartTitle>
 
         </AroundBox>
