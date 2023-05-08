@@ -16,19 +16,19 @@ const FormPaymentRight: React.FC = () => {
     >
       <div className='form-control'>
         <label htmlFor="">Số thẻ</label>
-        <input type="text" />
+        <input type="text" name='soThe' value={'123 456 789'} />
       </div>
       <div className='form-control'>
         <label htmlFor="">Họ tên chủ thẻ</label>
-        <input type="text" />
+        <input type="text" name='chuThe' value={'Hoang Van Binh'} />
       </div>
       <div className='form-control'>
         <label htmlFor="">Ngày hết hạn</label>
-        <input type="text" />
+        <input type="text" name='date' />
       </div>
       <div className='form-control'>
         <label htmlFor="">CVV/CGV</label>
-        <input type="text" value={'...'} />
+        <input type="text" value={'...'} name='typeTic' />
       </div>
 
       <Button style={{ width: "368px" }}>
