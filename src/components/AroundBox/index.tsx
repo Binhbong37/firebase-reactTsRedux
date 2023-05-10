@@ -1,8 +1,9 @@
-import React, { ReactNode } from 'react';
+import { ReactNode } from 'react';
 
 type Props = {
   children: ReactNode,
   [key: string]: any;
+
 }
 
 const AroundBox = ({ children, ...props }: Props) => {
