@@ -9,6 +9,72 @@
   .container-events__main {
     position: absolute;
     top: 30%;
-    left: 20%;
+    left: 11%;
+
+    .leftArrow {
+      position: absolute;
+      top: 40%;
+      left: -5%;
+      transform: translateX(-50%);
+    }
+
+    .rightArrow {
+      position: absolute;
+      top: 40%;
+      right: -6%;
+    }
+
+    .container-events__main-card {
+      display: flex;
+      column-gap: 30px;
+
+      .card-event {
+        width: 356px;
+        height: 550px;
+        background-color: #fff;
+        border-radius: 25px;
+
+        img {
+          width: 100%;
+          height: auto;
+          border-radius: 25px 25px 0 0;
+          object-fit: cover;
+        }
+
+        .card-envent_bottom {
+          padding: 16px 24px;
+
+          h2 {
+            font-size: 30px;
+            font-weight: 700;
+            color: #23221F;
+            margin: 0;
+          }
+
+          p {
+            color: #6C7272;
+            font-size: 18px;
+          }
+
+          .calendar-desc {
+            display: flex;
+            column-gap: 5px;
+            align-items: center;
+
+            .desc {
+              margin: 0;
+            }
+          }
+
+          .price {
+            font-size: 32px;
+            font-weight: 700;
+            color: #FA7D09;
+            margin-top: 28px;
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
   }
 }
