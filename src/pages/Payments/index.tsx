@@ -10,12 +10,14 @@ import FormHome from '../../components/Form/FormHome';
 // import { NewUsersType } from '../../type/users.type';
 import circle from '../../public/imgs/circle.png'
 import FormPaymentLeft from '../../components/Form/FormPaymentLeft';
-
+import { useLocation } from 'react-router-dom';
 
 const Payments: React.FC = () => {
+  const location = useLocation();
+  const { loaiVe } = location.state;
   // const [user, setUser] = useState<NewUsersType>({})
   const dispatch = useAppDispatch()
-  const { userId, userIdObj } = useAppSelector(state => state.userSlice)
+  const { userId } = useAppSelector(state => state.userSlice)
 
 
   useEffect(() => {
@@ -25,7 +27,6 @@ const Payments: React.FC = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [userId, dispatch])
 
-  const { soLuong, email, hoTen, phone } = userIdObj;
 
   const navigate = useNavigate()
   // btn thanh toan
@@ -41,7 +42,7 @@ const Payments: React.FC = () => {
       <div className='container-payment__main'>
         <AroundBox style={{ width: "950px" }}>
           <CartTitle style={{ width: "388px" }}>
-            Vé cổng - Vé gia đình
+            Vé cổng - {loaiVe === 'caNhan' ? "Vé Cá Nhân" : "Vé gia đình"}
           </CartTitle>
           <FormPaymentLeft />
         </AroundBox>

@@ -13,5 +13,10 @@
   .group-2 {
     display: flex;
     column-gap: 10px;
+
+    .datePick {
+      display: flex;
+      gap: 10px;
+    }
   }
 }
