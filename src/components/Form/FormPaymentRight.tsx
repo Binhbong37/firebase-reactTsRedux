@@ -3,6 +3,7 @@ import Button from '../Button';
 import { useNavigate, useLocation } from 'react-router-dom';
 import Calender from '../Icons/Calender';
 import { useAppDispatch } from '../../helpers/UseTypeRedux';
+import { addUser } from '../../store';
 
 
 interface ThanhToan {
@@ -12,9 +13,10 @@ interface ThanhToan {
 }
 
 const FormPaymentRight: React.FC = () => {
-  const [card, setCard] = useState({} as ThanhToan)
+  const [card, setCard] = useState({} as ThanhToan);
   const navigate = useNavigate();
-  const location = useLocation()
+  const location = useLocation();
+  const dispatch = useAppDispatch()
 
   const { email, hoTen, phone, loaiVe, ngaySuDung, soLuong } = location.state
 
@@ -39,7 +41,7 @@ const FormPaymentRight: React.FC = () => {
 
     }
 
-    console.log(saveInfoData)
+    dispatch(addUser(saveInfoData))
     // navigate('/paymentsuccess')
   }
   return (
