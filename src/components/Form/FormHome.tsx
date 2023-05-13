@@ -11,12 +11,10 @@ const FormHome: React.FC = () => {
 
   const handleChangeForm = (e: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLSelectElement>) => {
     const { name, value } = e.target;
-
     setValueForm({
       ...valueForm,
       [name]: value
     })
-
   }
 
   const handleSubmitForm = (e: React.FormEvent<HTMLFormElement>) => {
