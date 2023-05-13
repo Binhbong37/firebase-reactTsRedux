@@ -1,9 +1,14 @@
-import React from 'react';
-import { useLocation } from 'react-router-dom';
 
-const FormPaymentLeft: React.FC = () => {
-  const location = useLocation();
-  const { email, hoTen, phone, soLuong, ngaySuDung } = location.state;
+export interface typeProps {
+  email: string,
+  hoTen: string,
+  phone: string,
+  soLuong: string,
+  ngaySuDung: string,
+  loaiVe?: string
+}
+
+const FormPaymentLeft = ({ email, hoTen, phone, soLuong, ngaySuDung }: typeProps) => {
   return (
     <form className='form-group'>
       <div className='line-1'>

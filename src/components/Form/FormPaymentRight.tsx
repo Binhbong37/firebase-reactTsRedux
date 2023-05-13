@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
 import Button from '../Button';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import Calender from '../Icons/Calender';
 import { useAppDispatch } from '../../helpers/UseTypeRedux';
 import { addUser } from '../../store';
+import { typeProps } from './FormPaymentLeft';
 
 
 interface ThanhToan {
@@ -12,13 +13,11 @@ interface ThanhToan {
   ngayHetHan: string,
 }
 
-const FormPaymentRight: React.FC = () => {
+const FormPaymentRight = ({ loaiVe, email, hoTen, phone, soLuong, ngaySuDung }: typeProps) => {
   const [card, setCard] = useState({} as ThanhToan);
   const navigate = useNavigate();
-  const location = useLocation();
   const dispatch = useAppDispatch()
 
-  const { email, hoTen, phone, loaiVe, ngaySuDung, soLuong } = location.state
 
   const handleChangeForm = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -38,11 +37,9 @@ const FormPaymentRight: React.FC = () => {
     const saveInfoData = {
       chuThe, soThe, ngayHetHan,
       soLuong, phone, ngaySuDung, loaiVe, hoTen, email
-
     }
-
     dispatch(addUser(saveInfoData))
-    // navigate('/paymentsuccess')
+    navigate('/paymentsuccess')
   }
   return (
     <form className='form-group'

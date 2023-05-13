@@ -1,6 +1,6 @@
 export interface NewUsersType {
   loaiVe?: string,
-  soLuong?: number,
+  soLuong?: string,
   ngaySuDung?: string,
   hoTen?:string,
   email?:string,

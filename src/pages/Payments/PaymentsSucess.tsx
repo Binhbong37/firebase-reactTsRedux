@@ -5,7 +5,6 @@ import PreviousArrow from '../../components/Icons/PreviousArrow';
 import NextArrow from '../../components/Icons/NextArrow';
 
 
-
 const PaymentsSucess: React.FC = () => {
   return (
     <div className='container-paymentSucee'>
