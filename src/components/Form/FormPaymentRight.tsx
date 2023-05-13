@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import Button from '../Button';
 import { useNavigate, useLocation } from 'react-router-dom';
 import Calender from '../Icons/Calender';
+import { useAppDispatch } from '../../helpers/UseTypeRedux';
+
 
 interface ThanhToan {
   soThe: string,
