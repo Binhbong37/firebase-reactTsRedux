@@ -39,7 +39,7 @@ const FormPaymentRight = ({ loaiVe, email, hoTen, phone, soLuong, ngaySuDung }: 
       soLuong, phone, ngaySuDung, loaiVe, hoTen, email
     }
     dispatch(addUser(saveInfoData))
-    navigate('/paymentsuccess')
+    navigate('/paymentsuccess', { state: soLuong })
   }
   return (
     <form className='form-group'
@@ -61,11 +61,14 @@ const FormPaymentRight = ({ loaiVe, email, hoTen, phone, soLuong, ngaySuDung }: 
       </div>
       <div className='form-control'>
         <label htmlFor="">Ngày hết hạn</label>
-        <input type="date" name='ngayHetHan'
-          value={card.ngayHetHan || ''}
-          onChange={handleChangeForm}
-        />
-        <Calender />
+        <div className='calendar-date'>
+          <input type="date" name='ngayHetHan'
+            value={card.ngayHetHan || ''}
+            onChange={handleChangeForm}
+          />
+          <Calender />
+        </div>
+
       </div>
       <div className='form-control'>
         <label htmlFor="">CVV/CGV</label>
