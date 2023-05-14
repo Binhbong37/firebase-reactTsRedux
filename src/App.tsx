@@ -12,7 +12,7 @@ import { useEffect } from 'react';
 import { fetchUsers } from './store';
 
 function App() {
-  const dispatch = useAppDispatch()
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
     dispatch(fetchUsers())
