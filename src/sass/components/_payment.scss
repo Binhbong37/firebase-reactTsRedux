@@ -11,13 +11,19 @@
   .container-payment__main {
     position: absolute;
     top: 30%;
-    left: 10%;
+    left: 12%;
     display: flex;
 
     img {
       margin-left: -40px;
       margin-right: -70px;
     }
+  }
+
+  .trini {
+    position: absolute;
+    z-index: 15;
+    bottom: 10%;
   }
 }
 
@@ -115,6 +121,7 @@
       margin-right: 1rem;
     }
   }
+
 
 }
 

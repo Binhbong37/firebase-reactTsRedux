@@ -1,36 +1,13 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
-import { useAppDispatch } from "../../helpers/UseTypeRedux";
 import circle from '../../public/imgs/circle.png'
-import { NewUsersType } from "../../type/users.type";
-import { addUser } from "../../store";
 import AroundBox from "../../components/AroundBox";
 import Star from "../../components/Icons/Star";
 import CartTitle from "../../components/Carttitle";
 import FormHome from "../../components/Form/FormHome";
+import Lisa from '../../public/imgs/Lisa.png'
 
 const Home: React.FC = () => {
-  const dispatch = useAppDispatch()
 
-  const navigate = useNavigate()
-
-  const handleFormValue = (values: any): void => {
-    if (values.outOfDate === false) {
-      return
-    }
-
-    const newUser = {
-      soLuong: values.soLuong,
-      phone: values.phone,
-      hoTen: values.hoTen,
-      email: values.email,
-      loaiVe: values.loaiVe,
-      ngaySuDung: "23/03/2023"
-
-    } as NewUsersType
-    dispatch(addUser(newUser))
-    navigate('/payment')
-  }
   return (
     <div className="home-container">
       <div className="home-container__main">
@@ -62,6 +39,9 @@ const Home: React.FC = () => {
           </CartTitle>
           <FormHome />
         </AroundBox>
+      </div>
+      <div className="lisa">
+        <img src={Lisa} alt="LisaImg" />
       </div>
     </div>
   )

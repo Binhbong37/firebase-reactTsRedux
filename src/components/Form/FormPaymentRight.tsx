@@ -42,7 +42,7 @@ const FormPaymentRight = ({ loaiVe, email, hoTen, phone, soLuong, ngaySuDung }: 
     navigate('/paymentsuccess', { state: soLuong })
   }
   return (
-    <form className='form-group'
+    <form className='form-groupR'
       onSubmit={handleSubmitForm}
     >
       <div className='form-control'>

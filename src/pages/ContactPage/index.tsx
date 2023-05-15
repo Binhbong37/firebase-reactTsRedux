@@ -6,7 +6,8 @@ import Email from "../../components/Icons/Email";
 import Phone from "../../components/Icons/Phone";
 import { CloseOutlined } from "@ant-design/icons";
 import { Modal } from 'antd';
-import { Input, Form } from 'antd'
+import { Input, Form } from 'antd';
+import Alex from '../../public/imgs/Alex.png'
 
 const ContactPage = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -20,7 +21,6 @@ const ContactPage = () => {
 
   const resetForm = () => {
     setIsModalOpen(false)
-
   }
   return (
     <div className="container-contact">
@@ -142,6 +142,10 @@ const ContactPage = () => {
             </div>
           </AroundBox>
         </div>
+      </div>
+
+      <div className="alex">
+        <img src={Alex} alt="alexImg" />
       </div>
       <Modal open={isModalOpen}
         closeIcon={<CloseOutlined style={{ color: "orange" }} />}

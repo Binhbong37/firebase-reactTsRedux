@@ -35,8 +35,7 @@ const FormHome: React.FC = () => {
   }
   return (
     <form className='form-home' style={{ marginTop: "1rem" }}
-      onSubmit={handleSubmitForm}
-    >
+      onSubmit={handleSubmitForm} >
       <div className='calendar'>
         <select name="loaiVe"
           value={valueForm.loaiVe}
@@ -45,6 +44,7 @@ const FormHome: React.FC = () => {
           <option value="giaDinh">Gói gia đình</option>
           <option value="caNhan">Gói cá nhân</option>
         </select>
+
         <BottomAround />
       </div>
       <div className='group-2'>

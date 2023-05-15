@@ -6,6 +6,7 @@ import circle from '../../public/imgs/circle.png'
 import FormPaymentLeft from '../../components/Form/FormPaymentLeft';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { NewUsersType } from '../../type/users.type';
+import Trini from '../../public/imgs/Trini.png'
 
 const Payments: React.FC = () => {
   const location = useLocation();
@@ -57,6 +58,10 @@ const Payments: React.FC = () => {
           />
 
         </AroundBox>
+      </div>
+
+      <div className='trini'>
+        <img src={Trini} alt='trini' />
       </div>
     </div>
   )

@@ -3,6 +3,7 @@
   flex-direction: column;
   row-gap: 1rem;
   margin-top: 2rem;
+  padding: 0 3rem;
 
   .line-1 {
     display: flex;
@@ -10,6 +11,12 @@
   }
 }
 
+.form-groupR {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+  margin-top: 2rem;
+}
 
 .form-control {
 

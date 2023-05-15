@@ -9,7 +9,7 @@
   .container-contact__main {
     position: absolute;
     top: 30%;
-    left: 10%;
+    left: 15%;
     display: flex;
     column-gap: 30px;
 
@@ -22,7 +22,7 @@
     .contact-left {
       display: flex;
       flex-direction: column;
-      row-gap: 32px;
+      justify-content: space-between;
 
       .contact-address {
         display: flex;
@@ -40,6 +40,12 @@
         }
       }
     }
+  }
+
+  .alex {
+    position: absolute;
+    z-index: 10;
+    bottom: 10%;
   }
 }
 
