@@ -1,4 +1,5 @@
-import React, { ReactNode } from 'react'
+import React, { ReactNode } from 'react';
+import { Button as Buttonn } from 'antd';
 
 type Props = {
   children: ReactNode;
@@ -8,9 +9,9 @@ type Props = {
 const Button = ({ children, ...props }: Props) => {
   return (
     <div className='btn-container' {...props}>
-      <button className='btn'>
+      <Buttonn className='btn' htmlType='submit'>
         {children}
-      </button>
+      </Buttonn>
     </div>
   )
 }

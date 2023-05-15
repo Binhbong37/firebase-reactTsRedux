@@ -6,46 +6,21 @@ import Email from "../../components/Icons/Email";
 import Phone from "../../components/Icons/Phone";
 import { CloseOutlined } from "@ant-design/icons";
 import { Modal } from 'antd';
-
-type ContactForm = {
-  name: string,
-  email: string,
-  phone: string,
-  address: string,
-  message: string
-}
-
+import { Input, Form } from 'antd'
 
 const ContactPage = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [contact, setContact] = useState({} as ContactForm)
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setContact({
-      ...contact,
-      [name]: value
-    })
-  }
-  const handleSubmitForm = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const { phone, name, email, message, address } = contact;
-    if (!phone || !name || !email || !message || !address) {
-      return window.alert('Điền hết các ô')
+  const valueContact = (data: any) => {
+    if (data.outOfDate === false) {
+      return;
     }
-    console.log(contact)
-    setIsModalOpen(true)
+    console.log(data)
   }
 
   const resetForm = () => {
     setIsModalOpen(false)
-    setContact({
-      name: '',
-      phone: "",
-      address: "",
-      message: "",
-      email: ""
-    })
+
   }
   return (
     <div className="container-contact">
@@ -55,36 +30,87 @@ const ContactPage = () => {
             elit. Suspendisse ac mollis justo. Etiam volutpat
             tellus quis risus volutpat, ut posuere ex facilisis.
           </p>
-          <form onSubmit={handleSubmitForm}>
+          <Form
+            autoComplete="off"
+            onFinish={(values) => {
+              valueContact(values);
+              setIsModalOpen(true);
+
+            }}
+            onFinishFailed={(err) => {
+              valueContact(err)
+            }}
+          >
             <div className="group-1">
-              <input type="text" name="name" placeholder="name"
-                value={contact.name || ''}
-                onChange={handleChange}
-              />
-              <input type="email" name="email" placeholder="email"
-                value={contact.email || ''}
-                onChange={handleChange}
-              />
+              <Form.Item style={{ width: '40%' }}
+                name={'name'}
+                rules={[
+                  {
+                    required: true,
+                    message: 'Điền tên của bạn.'
+                  },
+                  { whitespace: true }
+                ]}
+              >
+                <Input className="input" placeholder="Tên"
+                />
+              </Form.Item>
+              <Form.Item style={{ width: '60%' }}
+                name={'email'}
+                rules={[
+                  {
+                    required: true,
+                    message: 'Điền email của bạn.'
+                  },
+                  { type: 'email', message: 'Chưa đúng dạng email' }
+                ]}
+              >
+                <Input className="input" placeholder="email"
+                />
+              </Form.Item>
             </div>
             <div className="group-1">
-              <input type="phone" name="phone" placeholder="Số điện thoại"
-                value={contact.phone || ''}
-                onChange={handleChange}
-              />
-              <input type="text" name="address" placeholder="Địa chỉ"
-                value={contact.address || ''}
-                onChange={handleChange}
-              />
+              <Form.Item style={{ width: '40%' }}
+                name={'phone'}
+                rules={[
+                  {
+                    required: true,
+                    message: 'Điền số điện thoại của bạn.'
+                  }
+                ]}
+              >
+                <Input className="input" placeholder="Số điện thoại" />
+              </Form.Item>
+
+              <Form.Item style={{ width: '60%' }}
+                name={'address'}
+                rules={[
+                  {
+                    required: true,
+                    message: 'Điền địa chỉ của bạn.'
+                  }
+                ]}
+              >
+                <Input className="input" placeholder="Địa chỉ" />
+              </Form.Item>
             </div>
             <div className="group-1">
-              <textarea name="message" placeholder="Lời nhắn"
-                rows={5}
-                value={contact.message || ''}
-                onChange={handleChange}
-              ></textarea>
+              <Form.Item style={{ width: '100%' }}
+                name={'message'}
+                rules={[
+                  {
+                    required: true,
+                    message: 'Điền nội dung gửi.'
+                  }
+                ]}
+              >
+                <Input.TextArea className="input" placeholder="Lời nhắn"
+                  rows={5}
+                ></Input.TextArea>
+              </Form.Item>
             </div>
-            <Button style={{ width: "368px", marginTop: "4rem" }}>Gửi liên hệ</Button>
-          </form>
+            <Button style={{ width: "368px" }}>Gửi liên hệ</Button>
+          </Form>
         </AroundBox>
 
         <div className="contact-left">

@@ -26,7 +26,9 @@ const FormHome: React.FC = () => {
     }
 
     const newTicket = {
-      hoTen, soLuong, email, loaiVe: loaiVe || "giaDinh", phone, ngaySuDung
+      hoTen, soLuong, email,
+      loaiVe: loaiVe || "giaDinh",
+      phone, ngaySuDung
     }
 
     navigate('/payment', { state: newTicket })

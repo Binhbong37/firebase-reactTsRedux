@@ -1,4 +1,4 @@
-input {
+.input {
   padding: 20px 16px;
   width: 100%;
   border-radius: 16px;
@@ -14,7 +14,7 @@ select {
   -webkit-appearance: none;
 }
 
-textarea {
+.textarea {
   @extend input;
   padding-top: 16px;
   resize: none;
@@ -39,9 +39,7 @@ textarea {
     border-radius: 0.5rem;
     padding: 0.5rem 1rem;
     font-size: 28px;
+    height: 60px;
 
   }
-
-  // pb-2 bg-shadowButton rounded-xl
-
 }
