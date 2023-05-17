@@ -39,7 +39,10 @@ const FormPaymentRight = ({ loaiVe, email, hoTen, phone, soLuong, ngaySuDung }: 
       soLuong, phone, ngaySuDung, loaiVe, hoTen, email
     }
     dispatch(addUser(saveInfoData))
-    navigate('/paymentsuccess', { state: soLuong })
+      .unwrap()
+      .then(() => navigate('/paymentsuccess', { state: soLuong }))
+      .catch((err) => console.log('K chuyển được route', err))
+
   }
   return (
     <form className='form-groupR'
