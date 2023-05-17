@@ -4,12 +4,16 @@ import SmallCalendar from '../Icons/SmallCalendar';
 import Button from '../Button';
 import { Link } from 'react-router-dom';
 
-const CardEvent: React.FC = () => {
+type EventProps = {
+  numEvent: string
+}
+
+const CardEvent = ({ numEvent }: EventProps) => {
   return (
     <div className='card-event'>
       <img src={imgEvent} alt="EventImg" />
       <div className='card-envent_bottom'>
-        <h2>Sự kiện 1</h2>
+        <h2>Sự kiện {numEvent}</h2>
         <p>Đầm sen Park</p>
         <div className='calendar-desc'>
           <SmallCalendar />
@@ -17,7 +21,7 @@ const CardEvent: React.FC = () => {
         </div>
 
         <p className='price'>250.000 VNĐ</p>
-        <Link to={'/event/:event1'}>
+        <Link to={`/event/${numEvent}`}>
           <Button>Xem chi tiết</Button>
         </Link>
       </div>

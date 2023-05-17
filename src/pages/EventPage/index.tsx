@@ -14,10 +14,10 @@ const EventPage: React.FC = () => {
           <NextArrow />
         </div>
         <div className="container-events__main-card">
-          <CardEvent />
-          <CardEvent />
-          <CardEvent />
-          <CardEvent />
+          <CardEvent numEvent="1" />
+          <CardEvent numEvent="2" />
+          <CardEvent numEvent="3" />
+          <CardEvent numEvent="4" />
         </div>
       </div>
     </div>

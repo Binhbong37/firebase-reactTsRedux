@@ -3,12 +3,25 @@ import AroundBox from '../../components/AroundBox';
 import eventDetail from '../../public/imgs/evenDetailimg.png'
 import SmallCalendar from '../../components/Icons/SmallCalendar';
 import retange from '../../public/imgs/Rectangle.png'
+import { useParams, useNavigate } from 'react-router-dom'
 
-const EventDetail: React.FC = () => {
+
+const EventDetail = () => {
+
+  const param = useParams();
+  const navigate = useNavigate();
+  const { id } = param;
+
+  if (!id) {
+    navigate('/envent')
+  }
+
+
+
   return (
     <div className='container-eventDetail'>
       <div className='container-eventDetail__main'>
-        <h2>Sự kiện 1</h2>
+        <h2>Sự kiện {id}</h2>
         <AroundBox style={{ width: "1520px" }}>
           <div className='container-box'>
             <div className='container-box__left'>
