@@ -3,19 +3,12 @@ import AroundBox from '../../components/AroundBox';
 import eventDetail from '../../public/imgs/evenDetailimg.png'
 import SmallCalendar from '../../components/Icons/SmallCalendar';
 import retange from '../../public/imgs/Rectangle.png'
-import { useParams, useNavigate } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 
 
 const EventDetail = () => {
-
   const param = useParams();
-  const navigate = useNavigate();
   const { id } = param;
-
-  if (!id) {
-    navigate('/envent')
-  }
-
 
 
   return (
