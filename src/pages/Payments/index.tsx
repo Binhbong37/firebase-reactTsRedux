@@ -18,10 +18,10 @@ const Payments: React.FC = () => {
       return navigate('/')
     }
 
-    const { email, phone, hoTen, ngaySuDung, soLuong } = location.state
+    const { email, phone, hoTen, ngaySuDung, soLuong, loaiVe } = location.state
 
     setUser({
-      email, phone, hoTen, ngaySuDung, soLuong
+      email, phone, hoTen, ngaySuDung, soLuong, loaiVe
     })
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
