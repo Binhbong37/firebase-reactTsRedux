@@ -16,17 +16,25 @@
       top: 40%;
       left: -5%;
       transform: translateX(-50%);
+      cursor: pointer;
     }
 
     .rightArrow {
       position: absolute;
       top: 40%;
       right: -6%;
+      cursor: pointer;
     }
 
     .container-events__main-card {
       display: flex;
       column-gap: 30px;
+      overflow-y: hidden;
+      overflow-x: auto;
+      overflow: hidden;
+      scroll-behavior: smooth;
+      max-width: 1515px;
+      width: 100%;
 
       .card-event {
         width: 356px;

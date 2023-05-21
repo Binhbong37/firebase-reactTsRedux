@@ -1,15 +1,18 @@
-import React from 'react'
 import AroundBox from '../../components/AroundBox';
 import eventDetail from '../../public/imgs/evenDetailimg.png'
 import SmallCalendar from '../../components/Icons/SmallCalendar';
 import retange from '../../public/imgs/Rectangle.png'
-import { useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom';
+import E404Page from '../../components/E404Page';
 
 
 const EventDetail = () => {
   const param = useParams();
   const { id } = param;
 
+  if (Number(id) > 4 || isNaN(Number(id))) {
+    return <E404Page />
+  }
 
   return (
     <div className='container-eventDetail'>

@@ -40,12 +40,16 @@ const FormHome: React.FC = () => {
         <select name="loaiVe"
           value={valueForm.loaiVe}
           onChange={handleChangeForm}
+          id='select'
         >
           <option value="giaDinh">Gói gia đình</option>
           <option value="caNhan">Gói cá nhân</option>
         </select>
 
-        <BottomAround />
+        <label htmlFor='select'>
+          <BottomAround />
+        </label>
+
       </div>
       <div className='group-2'>
         <input

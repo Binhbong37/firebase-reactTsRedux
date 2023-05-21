@@ -5,10 +5,12 @@ import Button from '../Button';
 import { Link } from 'react-router-dom';
 
 type EventProps = {
-  numEvent: string
+  numEvent: string,
+  totalEvent: number
 }
 
-const CardEvent = ({ numEvent }: EventProps) => {
+const CardEvent = ({ numEvent, totalEvent }: EventProps) => {
+
   return (
     <div className='card-event'>
       <img src={imgEvent} alt="EventImg" />

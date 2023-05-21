@@ -152,7 +152,7 @@ const ContactPage = () => {
         centered={true}
         onCancel={() => resetForm()}
         footer={null}
-        width={'472px'}
+
       >
         <p>Gửi liên hệ thành công <br />
           Vui lòng kiên nhẫn đợi phản hồi từ chúng tôi, bạn nhé!
