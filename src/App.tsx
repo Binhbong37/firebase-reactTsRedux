@@ -10,6 +10,7 @@ import E404Page from './components/E404Page';
 import { useAppDispatch } from './helpers/UseTypeRedux';
 import { useEffect } from 'react';
 import { fetchUsers } from './store';
+import Test from './pages/Test';
 
 function App() {
   const dispatch = useAppDispatch();
@@ -28,6 +29,7 @@ function App() {
         <Route path='/contact' element={<ContactPage />} />
         <Route path='/payment' element={<Payments />} />
         <Route path='/paymentsuccess' element={<PaymentsSucess />} />
+        <Route path='/test' element={<Test />} />
         <Route path='*' element={<E404Page />} />
       </Routes>
 
