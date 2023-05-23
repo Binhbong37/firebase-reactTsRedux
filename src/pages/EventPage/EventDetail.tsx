@@ -10,7 +10,7 @@ const EventDetail = () => {
   const param = useParams();
   const { id } = param;
 
-  if (Number(id) > 4 || isNaN(Number(id))) {
+  if (Number(id) > 6 || isNaN(Number(id))) {
     return <E404Page />
   }
 
