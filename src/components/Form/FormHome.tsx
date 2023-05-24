@@ -33,6 +33,7 @@ const FormHome: React.FC = () => {
 
     navigate('/payment', { state: newTicket })
   }
+
   return (
     <form className='form-home' style={{ marginTop: "1rem" }}
       onSubmit={handleSubmitForm} >
@@ -71,6 +72,7 @@ const FormHome: React.FC = () => {
             value={valueForm.ngaySuDung || ''}
             onChange={handleChangeForm}
           />
+
           <Calender />
         </div>
       </div>
