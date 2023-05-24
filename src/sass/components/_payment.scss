@@ -59,6 +59,9 @@
       display: flex;
       column-gap: 23px;
       justify-content: center;
+      max-width: 1270px;
+      scroll-behavior: smooth;
+      overflow-y: hidden;
 
       .card {
         width: 300px;

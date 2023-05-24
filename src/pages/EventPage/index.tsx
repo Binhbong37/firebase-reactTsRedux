@@ -14,7 +14,6 @@ const EventPage: React.FC = () => {
 
   const swiperRef = useRef<SwiperType>();
 
-
   const previousArrow = () => {
     swiperRef.current?.slidePrev()
     console.log("previos")

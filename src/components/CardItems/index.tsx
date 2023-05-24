@@ -7,7 +7,7 @@ import Check from '../Icons/Check';
 
 const CardItem: React.FC = () => {
   return (
-    <div className='card'>
+    <>
       <img src={qr} alt='qrcode' />
       <h2>ALT20210501</h2>
       <p className='port-ticket'>VÉ CỔNG</p>
@@ -16,7 +16,7 @@ const CardItem: React.FC = () => {
       <div className='checkIcon'>
         <Check />
       </div>
-    </div>
+    </>
 
   )
 }
